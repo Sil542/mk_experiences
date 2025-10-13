@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <title>AR.js Meertalig Startscherm</title>
 
-  <!-- 📦 Bibliotheken -->
+  <!--  Bibliotheken -->
   <script src="https://aframe.io/releases/1.4.2/aframe.min.js"></script>
   <script src="https://cdn.rawgit.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
 
@@ -16,7 +16,7 @@
       font-family: Arial, sans-serif; 
     }
 
-    /* 🎵 Audio en mute-knop */
+    /*  Audio en mute-knop */
     #audioNL, #audioDE, #audioEN { width: 300px; display: none; }
 
     #mutebutton {
@@ -31,7 +31,7 @@
     }
     #mutebutton:hover { background-color: #0056b3; }
 
-    /* 🌍 Startscherm */
+    /*  Startscherm */
     #startscreen {
       position: absolute; 
       top: 0; left: 0; 
@@ -46,7 +46,7 @@
       overflow: hidden;
     }
 
-    /* 🔵 Achtergrondvormen animatie */
+    /*  Achtergrondvormen animatie */
     .shape { 
       position: absolute; 
       border-radius: 50%; 
@@ -64,7 +64,7 @@
       100% {transform:translateY(0) translateX(0) rotate(0deg);}
     }
 
-    /* 🖼️ Logo */
+    /*  Logo */
     #logo { 
       position: absolute; 
       top: 20px; right: 20px; 
@@ -72,7 +72,7 @@
       z-index: 11; 
     }
 
-    /* 🌐 Taalkeuze knoppen */
+    /*  Taalkeuze knoppen */
     .langBtn {
       display: flex; 
       align-items: center; 
@@ -107,7 +107,7 @@
       transform: scale(1.1) rotate(5deg); 
     }
 
-    /* 📜 Onderaan tekstvak */
+    /*  Onderaan tekstvak */
     #bottomText {
       position: fixed;
       bottom: 0px; /* iets hoger dan onderkant */
@@ -178,13 +178,13 @@
   <a-entity camera></a-entity>
 </a-scene>
 
-<!-- 🎵 Audio bestanden -->
+<!--  Audio bestanden -->
 <audio id="audioNL" src="static/mp3/NL.mp3"></audio>
 <audio id="audioDE" src="static/mp3/DE.mp3"></audio>
 <audio id="audioEN" src="static/mp3/EN.mp3"></audio>
 
 <script>
-/* 🔊 Geluid aan/uit */
+/*  Geluid aan/uit */
 function mute_audio() {
   const audios = [audioNL, audioDE, audioEN];
   const muted = audios[0].muted;
@@ -192,7 +192,7 @@ function mute_audio() {
   mutebutton.textContent = muted ? "Geluid is momenteel aan" : "Geluid is momenteel uit";
 }
 
-/* 🌍 Taalkeuze */
+/*  Taalkeuze */
 let selectedLang = "NL";
 document.querySelectorAll('.langBtn').forEach(btn => {
   btn.addEventListener('click', () => {
@@ -201,7 +201,7 @@ document.querySelectorAll('.langBtn').forEach(btn => {
   });
 });
 
-/* 📖 Teksten per marker */
+/*  Teksten per marker */
 const greetings = {
   VISSERVROUW: {
     NL: `De visservrouw met de lange broek uit Moddergat is een fascinerend figuur uit de Friese visserijcultuur.<br><br>
@@ -226,7 +226,7 @@ const greetings = {
   }
 };
 
-/* 📱 Tekst onderin aanpassen bij markers */
+/*  Tekst onderin aanpassen bij markers */
 const bottomText = document.getElementById('bottomText');
 const markers = document.querySelectorAll('a-marker');
 
@@ -248,6 +248,7 @@ markers.forEach(m => {
 </script>
 </body>
 </html>
+
 
 
 
