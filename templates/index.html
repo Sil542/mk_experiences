@@ -141,7 +141,7 @@
 </head>
 <body>
 
-<!-- 🟦 Startscherm -->
+<!--  Startscherm -->
 <div id="startscreen">
   <div class="shape shape1"></div>
   <div class="shape shape2"></div>
@@ -156,16 +156,24 @@
   <button onclick="mute_audio()" type="button" id="mutebutton">Mute</button>
 </div>
 
-<!-- 🟨 Tekst onderin -->
+<!-- Tekst onderin -->
 <div id="bottomText"></div>
 
-<!-- 🟥 AR SCENE -->
+<!--  AR SCENE -->
 <a-scene embedded arjs="trackingMethod: best; debugUIEnabled: true;">
 
   <!-- Marker 1: VISSERVROUW -->
-  <a-marker id="markerVISSERVROUW" type="pattern" url="static/patt/Testmarker1.patt">
+  <a-marker id="markerVISSERVROUW" type="pattern" url="static/patt/Visservrouw.patt">
     <a-entity gltf-model="url(static/glb/poppetje.glb)" scale="4 4 4" rotation="-90 0 0"></a-entity>
   </a-marker>
+   <!-- Marker 2: Jongetje -->
+  <a-marker id="markerJONGETJE" type="pattern" url="Woonkamer.patt">
+    <a-entity gltf-model="url(jongentje.glb)" scale="4 4 4" rotation="-90 0 0"></a-entity>
+  </a-marker>
+
+  <a-entity camera></a-entity>
+</a-scene>
+
 
   <a-entity camera></a-entity>
 </a-scene>
@@ -207,7 +215,7 @@ const greetings = {
     DE: `Die Fischerin mit der langen Hose in Moddergat ist eine faszinierende Figur aus der friesischen Fischereikultur.<br><br>
     In traditionellen Fischerdörfern trugen Frauen meist lange Röcke, aber diese Frau fiel auf, weil sie Hosen trug – etwas, das für Frauen damals ungewöhnlich war.`
   },
-  POPPETJE: {
+  JONGETJE: {
     NL: `Hallo, welkom in mijn woonkamer.<br><br>
     Tijdens het eten zat ik op de grond. In ons huis was het zo dat de bewoners met een inkomen een stoel voor de tafel kregen en de rest niet.<br><br>
     Dit vertelt iets over de verdeling van welvaart in die tijd.`,
@@ -240,6 +248,7 @@ markers.forEach(m => {
 </script>
 </body>
 </html>
+
 
 
 
