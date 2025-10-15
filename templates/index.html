@@ -149,9 +149,9 @@
 
   <img id="logo" src="static/images/MuseumLogo.jpg" alt="Logo">
 
-  <button class="langBtn" data-lang="NL"><img src="static/images/NL_flag.png"><span>Nederlands</span></button>
-  <button class="langBtn" data-lang="EN"><img src="static/images/EN_flag.png"><span>English</span></button>
-  <button class="langBtn" data-lang="DE"><img src="static/images/DE_flag.png"><span>Deutsch</span></button>
+  <button class="langBtn" data-lang="NL"><img src="../static/images/NL_flag.png"><span>Nederlands</span></button>
+  <button class="langBtn" data-lang="EN"><img src="../static/images/EN_flag.png"><span>English</span></button>
+  <button class="langBtn" data-lang="DE"><img src="../static/images/DE_flag.png"><span>Deutsch</span></button>
 
   <button onclick="mute_audio()" type="button" id="mutebutton">Mute</button>
 </div>
@@ -163,12 +163,12 @@
 <a-scene embedded arjs="trackingMethod: best; debugUIEnabled: true;">
 
   <!-- Marker 1: VISSERVROUW -->
-  <a-marker id="markerVISSERVROUW" type="pattern" url="static/patt/Visservrouw.patt">
-    <a-entity gltf-model="url(static/glb/poppetje.glb)" scale="4 4 4" rotation="-90 0 0"></a-entity>
+  <a-marker id="markerVISSERVROUW" type="pattern" url="../static/patt/Visservrouw.patt">
+    <a-entity gltf-model="url(../static/glb/poppetje.glb)" scale="4 4 4" rotation="-90 0 0"></a-entity>
   </a-marker>
    <!-- Marker 2: Jongetje -->
-  <a-marker id="markerJONGETJE" type="pattern" url="Woonkamer.patt">
-    <a-entity gltf-model="url(jongentje.glb)" scale="4 4 4" rotation="-90 0 0"></a-entity>
+  <a-marker id="markerJONGETJE" type="pattern" url="../static/pattWoonkamer.patt">
+    <a-entity gltf-model="url(../static/glb/jongentje.glb)" scale="4 4 4" rotation="-90 0 0"></a-entity>
   </a-marker>
 
   <a-entity camera></a-entity>
@@ -179,9 +179,9 @@
 </a-scene>
 
 <!--  Audio bestanden -->
-<audio id="audioNL" src="static/mp3/NL.mp3"></audio>
-<audio id="audioDE" src="static/mp3/DE.mp3"></audio>
-<audio id="audioEN" src="static/mp3/EN.mp3"></audio>
+<audio id="audioNL" src="../static/mp3/NL.mp3"></audio>
+<audio id="audioDE" src="../static/mp3/DE.mp3"></audio>
+<audio id="audioEN" src="../static/mp3/EN.mp3"></audio>
 
 <script>
 /*  Geluid aan/uit */
@@ -248,6 +248,7 @@ markers.forEach(m => {
 </script>
 </body>
 </html>
+
 
 
 
