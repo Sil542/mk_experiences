@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <title>AR.js Meertalig Startscherm</title>
 
-  <!-- 📦 Bibliotheken -->
+  <!--  Bibliotheken -->
   <script src="https://aframe.io/releases/1.4.2/aframe.min.js"></script>
   <script src="https://cdn.rawgit.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
 
@@ -16,10 +16,13 @@
       font-family: Arial, sans-serif; 
     }
 
-    /* 🎵 Audio en mute-knop */
+    /*  Audio en mute-knop */
     #audioNL, #audioDE, #audioEN { width: 300px; display: none; }
 
     #mutebutton {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
       background-color: #007BFF;
       color: white;
       border: none;
@@ -28,10 +31,11 @@
       border-radius: 5px;
       cursor: pointer;
       transition: background-color 0.3s ease;
+      z-index: 30;
     }
     #mutebutton:hover { background-color: #0056b3; }
 
-    /* 🌍 Startscherm */
+    /*  Startscherm */
     #startscreen {
       position: absolute; 
       top: 0; left: 0; 
@@ -46,7 +50,7 @@
       overflow: hidden;
     }
 
-    /* 🔵 Achtergrondvormen animatie */
+    /*  Achtergrondvormen animatie */
     .shape { 
       position: absolute; 
       border-radius: 50%; 
@@ -64,7 +68,7 @@
       100% {transform:translateY(0) translateX(0) rotate(0deg);}
     }
 
-    /* 🖼️ Logo */
+    /*  Logo */
     #logo { 
       position: absolute; 
       top: 20px; right: 20px; 
@@ -72,7 +76,7 @@
       z-index: 11; 
     }
 
-    /* 🌐 Taalkeuze knoppen */
+    /*  Taalkeuze knoppen */
     .langBtn {
       display: flex; 
       align-items: center; 
@@ -107,7 +111,7 @@
       transform: scale(1.1) rotate(5deg); 
     }
 
-    /* 📜 Onderaan tekstvak */
+    /*  Onderaan tekstvak */
     #bottomText {
       position: fixed;
       bottom: 0px; /* iets hoger dan onderkant */
@@ -121,7 +125,7 @@
       font-size: 1.1em;
       line-height: 1.4em;
       color: black; /* tekst zwart */
-      background-color: rgba(255, 255, 255, 0.95); /* witte achtergrond */
+      background-color: rgba(255, 255, 255, 0.65); /* witte achtergrond */
       border-radius: 15px;
       box-shadow: 0 4px 10px rgba(0,0,0,0.2);
       display: none;
@@ -147,13 +151,12 @@
   <div class="shape shape2"></div>
   <div class="shape shape3"></div>
 
-  <img id="logo" src="static/images/MuseumLogo.jpg" alt="Logo">
+  <img id="logo" src="../static/images/MuseumLogo.jpg" alt="Logo">
 
-  <button class="langBtn" data-lang="NL"><img src="static/images/NL_flag.png"><span>Nederlands</span></button>
-  <button class="langBtn" data-lang="EN"><img src="static/images/EN_flag.png"><span>English</span></button>
-  <button class="langBtn" data-lang="DE"><img src="static/images/DE_flag.png"><span>Deutsch</span></button>
+  <button class="langBtn" data-lang="NL"><img src="../static/images/NL_flag.png"><span>Nederlands</span></button>
+  <button class="langBtn" data-lang="EN"><img src="../static/images/EN_flag.png"><span>English</span></button>
+  <button class="langBtn" data-lang="DE"><img src="../static/images/DE_flag.png"><span>Deutsch</span></button>
 
-  <button onclick="mute_audio()" type="button" id="mutebutton">Mute</button>
 </div>
 
 <!-- Tekst onderin -->
@@ -163,12 +166,12 @@
 <a-scene embedded arjs="trackingMethod: best; debugUIEnabled: true;">
 
   <!-- Marker 1: VISSERVROUW -->
-  <a-marker id="markerVISSERVROUW" type="pattern" url="static/patt/Visservrouw.patt">
-    <a-entity gltf-model="url(static/glb/poppetje.glb)" scale="4 4 4" rotation="-90 0 0"></a-entity>
+  <a-marker id="markerVISSERVROUW" type="pattern" url="../static/patt/Visservrouw.patt">
+    <a-entity gltf-model="url(../static/glb/poppetje.glb)" scale="4 4 4" rotation="-90 0 0"></a-entity>
   </a-marker>
    <!-- Marker 2: Jongetje -->
-  <a-marker id="markerJONGETJE" type="pattern" url="Woonkamer.patt">
-    <a-entity gltf-model="url(jongentje.glb)" scale="4 4 4" rotation="-90 0 0"></a-entity>
+  <a-marker id="markerJONGETJE" type="pattern" url="../static/patt/Woonkamer.patt">
+    <a-entity gltf-model="url(../static/glb/jongentje.glb)" scale="4 4 4" rotation="-90 0 0"></a-entity>
   </a-marker>
 
   <a-entity camera></a-entity>
@@ -178,13 +181,13 @@
   <a-entity camera></a-entity>
 </a-scene>
 
-<!-- 🎵 Audio bestanden -->
-<audio id="audioNL" src="static/mp3/NL.mp3"></audio>
-<audio id="audioDE" src="static/mp3/DE.mp3"></audio>
-<audio id="audioEN" src="static/mp3/EN.mp3"></audio>
+<!--  Audio bestanden -->
+<audio id="audioNL" src="../static/mp3/NL.mp3"></audio>
+<audio id="audioDE" src="../static/mp3/DE.mp3"></audio>
+<audio id="audioEN" src="../static/mp3/EN.mp3"></audio>
 
 <script>
-/* 🔊 Geluid aan/uit */
+/*  Geluid aan/uit */
 function mute_audio() {
   const audios = [audioNL, audioDE, audioEN];
   const muted = audios[0].muted;
@@ -192,7 +195,7 @@ function mute_audio() {
   mutebutton.textContent = muted ? "Geluid is momenteel aan" : "Geluid is momenteel uit";
 }
 
-/* 🌍 Taalkeuze */
+/*  Taalkeuze */
 let selectedLang = "NL";
 document.querySelectorAll('.langBtn').forEach(btn => {
   btn.addEventListener('click', () => {
@@ -201,7 +204,7 @@ document.querySelectorAll('.langBtn').forEach(btn => {
   });
 });
 
-/* 📖 Teksten per marker */
+/*  Teksten per marker */
 const greetings = {
   VISSERVROUW: {
     NL: `De visservrouw met de lange broek uit Moddergat is een fascinerend figuur uit de Friese visserijcultuur.<br><br>
@@ -226,7 +229,7 @@ const greetings = {
   }
 };
 
-/* 📱 Tekst onderin aanpassen bij markers */
+/*  Tekst onderin aanpassen bij markers */
 const bottomText = document.getElementById('bottomText');
 const markers = document.querySelectorAll('a-marker');
 
@@ -246,9 +249,6 @@ markers.forEach(m => {
   });
 });
 </script>
+  <button onclick="mute_audio()" type="button" id="mutebutton">Geluid aan/uit</button>
 </body>
 </html>
-
-
-
-
