@@ -3,141 +3,12 @@
 <head>
   <meta charset="UTF-8">
   <title>AR.js Meertalig Startscherm</title>
+  <link rel="stylesheet" href="../static/css/style.css">
 
-  <!-- 📦 Bibliotheken -->
+  <!--  Bibliotheken -->
   <script src="https://aframe.io/releases/1.4.2/aframe.min.js"></script>
   <script src="https://cdn.rawgit.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
 
-  <style>
-    body { 
-      margin: 0; 
-      height: 100vh; 
-      overflow: hidden; 
-      font-family: Arial, sans-serif; 
-    }
-
-    /* 🎵 Audio en mute-knop */
-    #audioNL, #audioDE, #audioEN { width: 300px; display: none; }
-
-    #mutebutton {
-      background-color: #007BFF;
-      color: white;
-      border: none;
-      padding: 12px 20px;
-      font-size: 16px;
-      border-radius: 5px;
-      cursor: pointer;
-      transition: background-color 0.3s ease;
-    }
-    #mutebutton:hover { background-color: #0056b3; }
-
-    /* 🌍 Startscherm */
-    #startscreen {
-      position: absolute; 
-      top: 0; left: 0; 
-      width: 100%; height: 100%; 
-      background: #0b1a33;
-      display: flex; 
-      justify-content: center; 
-      align-items: center; 
-      flex-direction: column; 
-      gap: 25px; 
-      z-index: 10; 
-      overflow: hidden;
-    }
-
-    /* 🔵 Achtergrondvormen animatie */
-    .shape { 
-      position: absolute; 
-      border-radius: 50%; 
-      opacity: 0.3; 
-      animation: float 20s infinite ease-in-out;
-      background: radial-gradient(circle, rgba(255,255,255,0.4) 0%, rgba(255,255,255,0) 70%);
-    }
-    .shape1 { width:200px; height:200px; top:10%; left:5%; animation-duration:25s; }
-    .shape2 { width:300px; height:300px; top:50%; left:70%; animation-duration:35s; }
-    .shape3 { width:150px; height:150px; top:80%; left:20%; animation-duration:30s; }
-
-    @keyframes float {
-      0% {transform:translateY(0) translateX(0) rotate(0deg);}
-      50% {transform:translateY(-50px) translateX(30px) rotate(45deg);}
-      100% {transform:translateY(0) translateX(0) rotate(0deg);}
-    }
-
-    /* 🖼️ Logo */
-    #logo { 
-      position: absolute; 
-      top: 20px; right: 20px; 
-      width: 100px; 
-      z-index: 11; 
-    }
-
-    /* 🌐 Taalkeuze knoppen */
-    .langBtn {
-      display: flex; 
-      align-items: center; 
-      justify-content: center; 
-      gap: 15px;
-      background: linear-gradient(135deg, #4facfe, #00f2fe);
-      border: none; 
-      border-radius: 30px; 
-      padding: 0 25px;
-      font-size: 1.2em; 
-      font-weight: 600; 
-      color: white; 
-      cursor: pointer;
-      width: 320px; 
-      height: 80px; 
-      box-shadow: 0 8px 25px rgba(0,0,0,0.25);
-      transition: all 0.3s ease; 
-      position: relative; 
-      z-index: 11;
-    }
-    .langBtn:hover { 
-      transform: translateY(-5px) scale(1.05); 
-      box-shadow: 0 15px 35px rgba(0,0,0,0.3); 
-    }
-    .langBtn img { 
-      width: 60px; 
-      height: 60px; 
-      border-radius: 50%; 
-      transition: transform 0.3s ease; 
-    }
-    .langBtn:hover img { 
-      transform: scale(1.1) rotate(5deg); 
-    }
-
-    /* 📜 Onderaan tekstvak */
-    #bottomText {
-      position: fixed;
-      bottom: 0px; /* iets hoger dan onderkant */
-      left: 50%;
-      transform: translateX(-50%);
-      width: 90%;
-      max-height: 200px; /* hoogte beperken */
-      overflow-y: auto; /* verticaal scrollen */
-      padding: 12px 20px;
-      text-align: center;
-      font-size: 1.1em;
-      line-height: 1.4em;
-      color: black; /* tekst zwart */
-      background-color: rgba(255, 255, 255, 0.95); /* witte achtergrond */
-      border-radius: 15px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-      display: none;
-      z-index: 20;
-      scrollbar-width: thin;
-      scrollbar-color: #888 #f0f0f0;
-    }
-
-    #bottomText::-webkit-scrollbar { width: 8px; }
-    #bottomText::-webkit-scrollbar-thumb {
-      background-color: #888;
-      border-radius: 10px;
-    }
-    #bottomText::-webkit-scrollbar-thumb:hover { background-color: #555; }
-
-  </style>
 </head>
 <body>
 
@@ -147,13 +18,12 @@
   <div class="shape shape2"></div>
   <div class="shape shape3"></div>
 
-  <img id="logo" src="static/images/MuseumLogo.jpg" alt="Logo">
+  <img id="logo" src="../static/images/MuseumLogo.jpg" alt="Logo">
 
-  <button class="langBtn" data-lang="NL"><img src="static/images/NL_flag.png"><span>Nederlands</span></button>
-  <button class="langBtn" data-lang="EN"><img src="static/images/EN_flag.png"><span>English</span></button>
-  <button class="langBtn" data-lang="DE"><img src="static/images/DE_flag.png"><span>Deutsch</span></button>
+  <button class="langBtn" data-lang="NL"><img src="../static/images/NL_flag.png"><span>Nederlands</span></button>
+  <button class="langBtn" data-lang="EN"><img src="../static/images/EN_flag.png"><span>English</span></button>
+  <button class="langBtn" data-lang="DE"><img src="../static/images/DE_flag.png"><span>Deutsch</span></button>
 
-  <button onclick="mute_audio()" type="button" id="mutebutton">Mute</button>
 </div>
 
 <!-- Tekst onderin -->
@@ -163,92 +33,32 @@
 <a-scene embedded arjs="trackingMethod: best; debugUIEnabled: true;">
 
   <!-- Marker 1: VISSERVROUW -->
-  <a-marker id="markerVISSERVROUW" type="pattern" url="static/patt/Visservrouw.patt">
-    <a-entity gltf-model="url(static/glb/poppetje.glb)" scale="4 4 4" rotation="-90 0 0"></a-entity>
+  <a-marker id="markerVISSERVROUW" type="pattern" url="../static/patt/Visservrouw.patt">
+    <a-entity gltf-model="url(../static/glb/poppetje.glb)" scale="4 4 4" rotation="-90 0 0"></a-entity>
   </a-marker>
    <!-- Marker 2: Jongetje -->
-  <a-marker id="markerJONGETJE" type="pattern" url="Woonkamer.patt">
-    <a-entity gltf-model="url(jongentje.glb)" scale="4 4 4" rotation="-90 0 0"></a-entity>
+  <a-marker id="markerJONGETJE" type="pattern" url="../static/patt/Woonkamer.patt">
+    <a-entity gltf-model="url(../static/glb/jongetje.glb)" scale="4 4 4" rotation="-90 0 0"></a-entity>
   </a-marker>
 
   <a-entity camera></a-entity>
 </a-scene>
 
-
   <a-entity camera></a-entity>
 </a-scene>
 
-<!-- 🎵 Audio bestanden -->
-<audio id="audioNL" src="static/mp3/NL.mp3"></audio>
-<audio id="audioDE" src="static/mp3/DE.mp3"></audio>
-<audio id="audioEN" src="static/mp3/EN.mp3"></audio>
+<!-- 🎧 Audio Visservrouw -->
+<audio id="audioVISSERVROUW_NL" src="../static/mp3/NL.mp3"></audio>
+<audio id="audioVISSERVROUW_DE" src="../static/mp3/DE.mp3"></audio>
+<audio id="audioVISSERVROUW_EN" src="../static/mp3/EN.mp3"></audio>
 
-<script>
-/* 🔊 Geluid aan/uit */
-function mute_audio() {
-  const audios = [audioNL, audioDE, audioEN];
-  const muted = audios[0].muted;
-  audios.forEach(a => a.muted = !muted);
-  mutebutton.textContent = muted ? "Geluid is momenteel aan" : "Geluid is momenteel uit";
-}
+<!-- 🎧 Audio Jongetje -->
+<audio id="audioJONGETJE_NL" src="../static/mp3/jongetje_NL.mp3"></audio>
+<audio id="audioJONGETJE_DE" src="../static/mp3/jongetje_DE.mp3"></audio>
+<audio id="audioJONGETJE_EN" src="../static/mp3/jongetje_EN.mp3"></audio>
 
-/* 🌍 Taalkeuze */
-let selectedLang = "NL";
-document.querySelectorAll('.langBtn').forEach(btn => {
-  btn.addEventListener('click', () => {
-    selectedLang = btn.dataset.lang;
-    document.getElementById('startscreen').style.display = 'none';
-  });
-});
 
-/* 📖 Teksten per marker */
-const greetings = {
-  VISSERVROUW: {
-    NL: `De visservrouw met de lange broek uit Moddergat is een fascinerend figuur uit de Friese visserijcultuur.<br><br>
-    In traditionele vissersgemeenschappen droegen vrouwen vaak lange rokken, maar deze vrouw viel op omdat ze een broek droeg — iets wat destijds ongebruikelijk was.<br><br>
-    Dit kledingstuk stond symbool voor haar praktische instelling en sterke karakter.<br><br>
-    De vrouwen in Moddergat, dat aan de Waddenzee ligt, verrichtten zwaar werk zoals het herstellen van netten en dragen van goederen.<br><br>
-    De visservrouw met de lange broek symboliseert de kracht en het doorzettingsvermogen van de vrouwen die het dorp en hun gezinnen draaiende hielden.`,
-    EN: `The fisherwoman with the long trousers in Moddergat is a fascinating figure from Frisian fishing culture.<br><br>
-    In traditional fishing communities, women often wore long skirts, but this woman stood out because she wore trousers — something unusual for women at the time.<br><br>
-    This choice reflected her practicality and strong character.`,
-    DE: `Die Fischerin mit der langen Hose in Moddergat ist eine faszinierende Figur aus der friesischen Fischereikultur.<br><br>
-    In traditionellen Fischerdörfern trugen Frauen meist lange Röcke, aber diese Frau fiel auf, weil sie Hosen trug – etwas, das für Frauen damals ungewöhnlich war.`
-  },
-  JONGETJE: {
-    NL: `Hallo, welkom in mijn woonkamer.<br><br>
-    Tijdens het eten zat ik op de grond. In ons huis was het zo dat de bewoners met een inkomen een stoel voor de tafel kregen en de rest niet.<br><br>
-    Dit vertelt iets over de verdeling van welvaart in die tijd.`,
-    EN: `Hello, welcome to my living room.<br><br>
-    While eating, I sat on the floor. In our home, those who earned an income got a chair, the others did not.`,
-    DE: `Hallo, willkommen in meinem Wohnzimmer.<br><br>
-    Beim Essen saß ich auf dem Boden. Die Bewohner mit einem Einkommen bekamen einen Stuhl, der Rest nicht.`
-  }
-};
-
-/* 📱 Tekst onderin aanpassen bij markers */
-const bottomText = document.getElementById('bottomText');
-const markers = document.querySelectorAll('a-marker');
-
-markers.forEach(m => {
-  const key = m.id.replace('marker', ''); // bv. 'VISSERVROUW'
-  m.addEventListener('markerFound', () => {
-    if (greetings[key] && greetings[key][selectedLang]) {
-      bottomText.innerHTML = greetings[key][selectedLang];
-      bottomText.style.display = 'block';
-      const audio = document.getElementById('audio' + selectedLang);
-      if (audio) audio.play();
-    }
-  });
-  m.addEventListener('markerLost', () => {
-    bottomText.style.display = 'none';
-    bottomText.innerHTML = "";
-  });
-});
-</script>
+  <button onclick="mute_audio()" type="button" id="mutebutton">Geluid aan/uit</button>
+  <script src="../static/js/javascript.js"></script>
 </body>
 </html>
-
-
-
-
