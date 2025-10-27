@@ -30,7 +30,11 @@
 <div id="bottomText"></div>
 
 <!--  AR SCENE -->
-<a-scene embedded arjs="trackingMethod: best; debugUIEnabled: true;">
+<a-scene 
+  embedded 
+  arjs="trackingMethod: best; debugUIEnabled: true;" 
+  vr-mode-ui="enabled: false;">
+</a-scene>
 
   <!-- Marker 1: VISSERVROUW -->
   <a-marker id="markerVISSERVROUW" type="pattern" url="../static/patt/Visservrouw.patt">
@@ -57,8 +61,16 @@
 <audio id="audioJONGETJE_DE" src="../static/mp3/jongetje_DE.mp3"></audio>
 <audio id="audioJONGETJE_EN" src="../static/mp3/jongetje_EN.mp3"></audio>
 
+<button onclick="mute_audio()" type="button" id="mutebutton">
+  <img id="muteIcon" src="../static/images/unmute.png" alt="Mute/Unmute" width="24" height="24">
+</button>
 
-  <button onclick="mute_audio()" type="button" id="mutebutton">Geluid aan/uit</button>
+<button 
+  class="google-form-button"
+  onclick="window.location.href='https://docs.google.com/forms/d/e/1FAIpQLSduIYx74WvWJ7fLMNlH7zqheRPlyHnjoqebG-GIz9LahildKg/viewform?usp=dialog'">
+  Feedback
+</button>
+
   <script src="../static/js/javascript.js"></script>
 </body>
 </html>
