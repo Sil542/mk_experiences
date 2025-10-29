@@ -5,24 +5,87 @@
       font-family: Arial, sans-serif; 
     }
 
+    #arjsDebugUIContainer {
+      display: none;
+    }
+    
+  .google-form-button {
+  position: fixed;
+  top: 20px;
+  right: 90px;       /* rechts van mute-knop */
+  z-index: 90;
+  background-color: #05be33;  /* Google-blauw */
+  color: white;
+  padding: 10px 20px;
+  font-size: 16px;
+  font-family: Arial, sans-serif;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.google-form-button:hover {
+  background-color: #155ab6;
+  transform: scale(1.05);
+}
+
+.google-form-button:active {
+  transform: scale(0.98);
+}
+
+/* Style voor de knop bovenaan rechts op het scherm */
+.play-audio-btn {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  padding: 10px 16px;
+  font-size: 16px;
+  background-color: #008CBA; /* blauw */
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  z-index: 1000; 
+}
+
+.play-audio-btn:hover {
+  background-color: #0072A3;
+}
+
+.play-audio-btn:active {
+  background-color: #005f85;
+}
+
+
+
+#logo { 
+      position: absolute; 
+      top: 580px; right: 20px; 
+      width: 100px; 
+      z-index: 11; 
+    }
+
+
     /*  Audio en mute-knop */
     #audioNL, #audioDE, #audioEN { width: 300px; display: none; }
 
     #mutebutton {
       position: fixed;
-      bottom: 20px;
+      top: 20px;
       right: 20px;
-      background-color: #007BFF;
-      color: white;
+      background-color: none;
+      color: none;
       border: none;
       padding: 12px 20px;
       font-size: 16px;
       border-radius: 5px;
       cursor: pointer;
       transition: background-color 0.3s ease;
-      z-index: 30;
+      z-index: 10;
     }
-    #mutebutton:hover { background-color: #0056b3; }
+    #mutebutton:hover { background-color: none; }
 
     /*  Startscherm */
     #startscreen {
@@ -58,12 +121,7 @@
     }
 
     /*  Logo */
-    #logo { 
-      position: absolute; 
-      top: 20px; right: 20px; 
-      width: 100px; 
-      z-index: 11; 
-    }
+    
 
     /*  Taalkeuze knoppen */
     .langBtn {
