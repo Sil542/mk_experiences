@@ -14,11 +14,18 @@ function setupMarkers() {
   const bottomText = document.getElementById('bottomText');
   const markers = document.querySelectorAll('a-marker');
   const allAudios = Array.from(document.querySelectorAll('audio'));
+  let markerLostTimeouts = {};
 
   markers.forEach(m => {
     const key = m.id.replace('marker', '');
 
     m.addEventListener('markerFound', () => {
+      // If this marker was lost and a timeout exists, cancel it
+      if (markerLostTimeouts[key]) {
+        clearTimeout(markerLostTimeouts[key]);
+        markerLostTimeouts[key] = null;
+      }
+
       if (greetings[key] && greetings[key][selectedLang]) {
         bottomText.innerHTML = greetings[key][selectedLang];
         bottomText.style.display = 'block';
@@ -33,18 +40,11 @@ function setupMarkers() {
         const audio = document.getElementById(`audio${key}_${selectedLang}`);
         if (!audio) return;
 
-        // Zorg dat audio standaard uit staat
-        audio.pause();
-        audio.currentTime = 0;
-
         // Toggle play/pause gedrag
         toggleButton.addEventListener('click', () => {
           if (audio.paused) {
             // Stop alle andere audio's
-            allAudios.forEach(a => {
-              a.pause();
-            });
-
+            allAudios.forEach(a => a.pause());
             audio.play();
             toggleButton.textContent = 'Pauzeer audio';
           } else {
@@ -61,18 +61,22 @@ function setupMarkers() {
     });
 
     m.addEventListener('markerLost', () => {
-      // Stop en reset audio
-      allAudios.forEach(a => {
-        a.pause();
-      });
+      markerLostTimeouts[key] = setTimeout(() => {
+        if (!m.object3D.visible) {
+          // Stop and reset audio only if still lost
+          allAudios.forEach(a => {
+            a.pause();
+            a.currentTime = 0;
+          });
 
-      // Verberg tekst en knop
-      bottomText.style.display = 'none';
-      bottomText.innerHTML = "";
+          // Hide text and button
+          bottomText.style.display = 'none';
+          bottomText.innerHTML = "";
+        }
+      }, 2000);
     });
   });
 }
-
 
 /* Language selection stays the same */
 document.querySelectorAll('.langBtn').forEach(btn => {
