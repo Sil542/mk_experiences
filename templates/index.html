@@ -12,6 +12,14 @@
 </head>
 <body>
 
+    <div class="label-container">
+  <label id="LabelcounterNL">0</label>
+  <label id="LabelcounterEn">0</label>
+  <label id="LabelcounterDE">0</label>
+</div>
+  <!-- Knop om instellingen te openen -->
+    <button id="openSettingsBtn">Instellingen</button>
+
 <!--  Startscherm -->
 <div id="startscreen">
   <div class="shape shape1"></div>
@@ -20,9 +28,9 @@
 
   <img id="logo" src="../static/images/MuseumLogo.jpg" alt="Logo">
 
-  <button class="langBtn" data-lang="NL"><img src="../static/images/NL_flag.png"><span>Nederlands</span></button>
-  <button class="langBtn" data-lang="EN"><img src="../static/images/EN_flag.png"><span>English</span></button>
-  <button class="langBtn" data-lang="DE"><img src="../static/images/DE_flag.png"><span>Deutsch</span></button>
+  <button id = "NederlandsBtn"class="langBtn" data-lang="NL"><img src="../static/images/NL_flag.png"><span>Nederlands</span></button>
+  <button id = "EngelsBtn"class="langBtn"     data-lang="EN"><img src="../static/images/EN_flag.png"><span>English</span></button>
+  <button id = "DuitsBtn"class="langBtn"      data-lang="DE"><img src="../static/images/DE_flag.png"><span>Deutsch</span></button>
 
 </div>
 
@@ -30,11 +38,7 @@
 <div id="bottomText"></div>
 
 <!--  AR SCENE -->
-<a-scene 
-  embedded 
-  arjs="trackingMethod: best; debugUIEnabled: true;" 
-  vr-mode-ui="enabled: false;">
-</a-scene>
+<a-scene embedded arjs="trackingMethod: best; debugUIEnabled: true;">
 
   <!-- Marker 1: VISSERVROUW -->
   <a-marker id="markerVISSERVROUW" type="pattern" url="../static/patt/Visservrouw.patt">
@@ -51,19 +55,14 @@
   <a-entity camera></a-entity>
 </a-scene>
 
-<!-- 🎧 Audio Visservrouw -->
+<!--  Audio bestanden -->
 <audio id="audioVISSERVROUW_NL" src="../static/mp3/NL.mp3"></audio>
 <audio id="audioVISSERVROUW_DE" src="../static/mp3/DE.mp3"></audio>
 <audio id="audioVISSERVROUW_EN" src="../static/mp3/EN.mp3"></audio>
 
-<!-- 🎧 Audio Jongetje -->
 <audio id="audioJONGETJE_NL" src="../static/mp3/jongetje_NL.mp3"></audio>
 <audio id="audioJONGETJE_DE" src="../static/mp3/jongetje_DE.mp3"></audio>
 <audio id="audioJONGETJE_EN" src="../static/mp3/jongetje_EN.mp3"></audio>
-
-<button onclick="mute_audio()" type="button" id="mutebutton">
-  <img id="muteIcon" src="../static/images/unmute.png" alt="Mute/Unmute" width="24" height="24">
-</button>
 
 <button 
   class="google-form-button"
