@@ -1,20 +1,23 @@
-    body { 
-      margin: 0; 
-      height: 100vh; 
-      overflow: hidden; 
-      font-family: Arial, sans-serif; 
-    }
+body { 
+  -webkit-user-select: none; /* Safari */
+  -ms-user-select: none; /* IE 10 and IE 11 */
+  user-select: none; /* Standard syntax */
+  margin: 0; 
+  height: 100vh; 
+  overflow: hidden; 
+  font-family: Arial, sans-serif; 
+}
 
-    #arjsDebugUIContainer {
-      display: none;
-    }
-    
-  .google-form-button {
+#arjsDebugUIContainer {
+  display: none;
+} 
+
+.google-form-button {
   position: fixed;
   top: 20px;
-  right: 90px;       /* rechts van mute-knop */
+  right: 90px;
   z-index: 90;
-  background-color: #05be33;  /* Google-blauw */
+  background-color: #05be33;
   color: white;
   padding: 10px 20px;
   font-size: 16px;
