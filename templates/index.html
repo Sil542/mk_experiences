@@ -12,7 +12,14 @@
 
 </head>
 <body>
-
+<div class="label-container">
+  <label id="LabelcounterNL">0</label>
+  <label id="LabelcounterEn">0</label>
+  <label id="LabelcounterDE">0</label>
+</div>
+  
+  <!-- Knop om instellingen te openen -->
+    <button id="openSettingsBtn">Instellingen</button>
 <!--  Startscherm -->
 <div id="startscreen">
   <div class="shape shape1"></div>
@@ -21,9 +28,9 @@
 
   <img id="logo" src="../static/images/MuseumLogo.jpg" alt="Logo">
 
-  <button class="langBtn" data-lang="NL"><img src="../static/images/NL_flag.png"><span>Nederlands</span></button>
-  <button class="langBtn" data-lang="EN"><img src="../static/images/EN_flag.png"><span>English</span></button>
-  <button class="langBtn" data-lang="DE"><img src="../static/images/DE_flag.png"><span>Deutsch</span></button>
+  <button id = "NederlandsBtn"class="langBtn" data-lang="NL"><img src="../static/images/NL_flag.png"><span>Nederlands</span></button>
+  <button id = "EngelsBtn"class="langBtn"     data-lang="EN"><img src="../static/images/EN_flag.png"><span>English</span></button>
+  <button id = "DuitsBtn"class="langBtn"      data-lang="DE"><img src="../static/images/DE_flag.png"><span>Deutsch</span></button>
 
 </div>
 
@@ -66,3 +73,4 @@
 
 </body>
 </html>
+
