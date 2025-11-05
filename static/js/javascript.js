@@ -86,3 +86,80 @@ document.querySelectorAll('.langBtn').forEach(btn => {
   });
 });
 
+//  Instellingenknop opent het startscherm
+document.getElementById("openSettingsBtn").addEventListener("click", function() {
+  const startScreen = document.getElementById("startscreen");
+  if (startScreen) {
+    startScreen.style.display = "flex"; // toon het startscherm
+  }
+});
+
+// sietze counter boy
+// --- Teller variabelen (tijdelijke variabelen) ---
+let countNL = 0;
+let countEn = 0;
+let countDe = 0;
+
+// --- JSON laden uit localStorage als het bestaat ---
+const savedCounters = localStorage.getItem("counters");
+if (savedCounters) {
+  const data = JSON.parse(savedCounters);
+  countNL = data.NL;
+  countEn = data.EN;
+  countDe = data.DE;
+}
+
+// --- Update labels op pagina ---
+function updateLabels() {
+  document.getElementById("LabelcounterNL").textContent = countNL;
+  document.getElementById("LabelcounterEn").textContent = countEn;
+  document.getElementById("LabelcounterDE").textContent = countDe;
+}
+
+// --- Discord webhook functie ---
+const webhookURL = "https://canary.discord.com/api/webhooks/1433427430445682688/sdizPzVEYSED3CySehUamhvkVwwyZvhrS8vnNkx_AeZsWwzXHygiELTHxY0PVq04L45h";
+
+async function sendToDiscord(message) {
+  try {
+    await fetch(webhookURL, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ content: message })
+    });
+    console.log("Bericht verzonden:", message);
+  } catch (error) {
+    console.error("Fout bij verzenden:", error);
+  }
+}
+
+// --- JSON opslaan in localStorage ---
+function saveCounterToJSON() {
+  const data = { NL: countNL, EN: countEn, DE: countDe };
+  localStorage.setItem("counters", JSON.stringify(data));
+  console.log("Teller opgeslagen in localStorage");
+}
+
+// --- Button clicks ---
+document.getElementById("NederlandsBtn").onclick = () => {
+  countNL++;
+  updateLabels();
+  sendToDiscord(`NL teller: ${countNL}`);
+  saveCounterToJSON();
+};
+
+document.getElementById("EngelsBtn").onclick = () => {
+  countEn++;
+  updateLabels();
+  sendToDiscord(`EN teller: ${countEn}`);
+  saveCounterToJSON();
+};
+
+document.getElementById("DuitsBtn").onclick = () => {
+  countDe++;
+  updateLabels();
+  sendToDiscord(`DE teller: ${countDe}`);
+  saveCounterToJSON();
+};
+
+// --- Initial labels tonen ---
+updateLabels();
