@@ -37,6 +37,32 @@ body {
   transform: scale(0.98);
 }
 
+/* Instellingenknop */
+#openSettingsBtn {
+  position: fixed;
+  top: 20px;
+  right: 200px; /* links van de feedbackknop */
+  z-index: 90;
+  background-color: #333; /* donkergrijs voor contrast */
+  color: white;
+  padding: 10px 20px;
+  font-size: 16px;
+  font-family: Arial, sans-serif;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+#openSettingsBtn:hover {
+  background-color: #555;
+  transform: scale(1.05);
+}
+
+#openSettingsBtn:active {
+  transform: scale(0.98);
+}
+
 /* Style voor de knop bovenaan rechts op het scherm */
 .play-audio-btn {
   position: fixed;
@@ -196,4 +222,34 @@ body {
       background-color: #888;
       border-radius: 10px;
     }
-    #bottomText::-webkit-scrollbar-thumb:hover { background-color: #555; }
+
+#bottomText::-webkit-scrollbar-thumb:hover { background-color: #555; }
+     .label-container {
+    display: flex;           /* labels naast elkaar */
+    gap: 20px;               /* ruimte tussen labels */
+    justify-content: center; /* labels centreren */
+    margin-top: 50px;
+    font-family: Arial, sans-serif;
+  }
+
+  /* Styling voor elk label */
+  .label-container label {
+    background-color: #f0f0f0; /* lichte achtergrond */
+    color: #333;               /* tekstkleur */
+    padding: 10px 20px;        /* ruimte binnen de label */
+    border-radius: 8px;        /* afgeronde hoeken */
+    border: 1px solid #ccc;    /* dunne rand */
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+    min-width: 80px;
+    box-shadow: 2px 2px 5px rgba(0,0,0,0.1); /* subtiele schaduw */
+    transition: transform 0.2s;
+  }
+
+  /* Hover-effect */
+  .label-container label:hover {
+    transform: scale(1.1);
+    background-color: #e0e0e0;
+    cursor: pointer;
+  }
