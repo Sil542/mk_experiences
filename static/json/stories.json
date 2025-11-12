@@ -8,6 +8,16 @@
     "NL": "Ik ben een jongetje dat woont in Moddergat, in een klein huisje vlak bij de zee.<br>We hebben niet veel geld, en vroeger had ik helemaal geen inkomen.<br>Als we samen aten, moest ik op de grond zitten, terwijl de mensen met geld aan tafel op stoelen mochten zitten.<br>Ons huisje is oud en klein, met lage muren en kleine ramen.<br>We konden geen grotere ramen maken, want daar moest je belasting over betalen — hoe groter het raam, hoe meer belasting je moest geven.<br>Daarom is het in huis vaak donker, maar we zijn toch blij met wat we hebben.<br>",
     "EN": "I am a little boy who lives in Moddergat, in a small house near the sea.<br>We don’t have much money, and in the past, I didn’t have any income at all.<br>When we ate together, I had to sit on the floor, while the people with money could sit on chairs at the table.<br>Our house is old and small, with low walls and tiny windows.<br>We couldn’t make the windows any bigger, because we had to pay tax on them — the bigger the window, the higher the tax.<br>That’s why it’s often dark inside, but we’re still happy with what we have.<br>",
     "DE": "Ich bin ein kleiner Junge, der in Moddergat lebt, in einem kleinen Häuschen in der Nähe des Meeres.<br>Wir haben nicht viel Geld, und früher hatte ich überhaupt kein Einkommen.<br>Wenn wir zusammen aßen, musste ich auf dem Boden sitzen, während die Leute mit Geld auf Stühlen am Tisch sitzen durften.<br>Unser Haus ist alt und klein, mit niedrigen Wänden und kleinen Fenstern.<br>Wir konnten keine größeren Fenster bauen, weil man dafür Steuern zahlen musste — je größer das Fenster, desto höher die Steuer.<br>Deshalb ist es im Haus oft dunkel, aber wir sind trotzdem glücklich mit dem, was wir haben.<br>"
+  },
+  "audio_play":{
+    "NL": "Speel audio",
+    "EN": "Play audio",
+    "DE": "Audio abspielen"
+  },
+  "audio_pause":{
+    "NL": "Pauzeer audio",
+    "EN": "Pause audio",
+    "DE": "Audio pausieren"
   }
 }
 
