@@ -49,7 +49,6 @@ function incrementCounter(lang) {
   if (lang === "DE") countDe++;
 
   updateLabels();
-  sendToDiscord(`${lang} teller: ${getCount(lang)}`);
   saveCounterToJSON();
   sendCounterToDB(lang); // <-- aangepast, stuurt alleen de aangeklikte taal
 }
