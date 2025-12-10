@@ -1,60 +1,66 @@
-
-
+/* Combined Firda-stijl CSS met ontbrekende onderdelen toegevoegd (zonder feedback-knop) */
 
 :root {
-  --firda-dark-bg: #3c524b; /* Donkergroene/antraciet achtergrond */
-  --firda-accent-btn: #f5c441; /* Warme okergele knopkleur */
-  --firda-text-light: #ffffff; /* Witte tekst voor donkere achtergrond */
-  --firda-text-dark: #333333; /* Donkere tekst voor lichte knoppen */
+  --firda-dark-bg: #3c524b;
+  --firda-accent-btn: #f5c441;
+  --firda-text-light: #ffffff;
+  --firda-text-dark: #333333;
 }
 
+/* Algemene body styling */
+body {
+  margin: 0;
+  height: 100vh;
+  overflow: hidden;
+  font-family: Arial, sans-serif;
+}
 
-/* Achtergrond van het startscherm (Donkergroene/Antraciet kleur) */
+#arjsDebugUIContainer { display: none; }
+
+/* Startscreen achtergrond */
 #startscreen {
-  position: absolute; 
-  top: 0; 
-  left: 0; 
-  width: 100%; 
-  height: 100%; 
-  /* Gebruik de donkere Firda kleur, eventueel met een lichte variatie */
-  background: linear-gradient(135deg, var(--firda-dark-bg) 0%, #4a625a 100%); 
-  display: flex; 
-  justify-content: center; 
-  align-items: center; 
-  flex-direction: column; 
-  gap: 30px; 
-  z-index: 10; 
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, var(--firda-dark-bg) 0%, #4a625a 100%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 30px;
+  z-index: 10;
   overflow: hidden;
 }
-/* Logo*/
-#startscreen #logo { 
-  position: relative; 
-  top: auto; 
-  right: auto; 
-  margin-bottom: 40px; 
-  width: 250px; 
-  height: auto; 
-  z-index: 11; 
-  border-radius: 20px; 
+
+/* Logo in startscreen */
+#startscreen #logo {
+  position: relative;
+  margin-bottom: 40px;
+  width: 250px;
+  z-index: 11;
+  border-radius: 20px;
   padding: 5px;
 }
+
 #startscreen #startTitle {
-    color: var(--firda-text-light, #ffffff);
-    font-family: 'Georgia', serif; 
-    font-size: 30px; 
-    text-align: center;
-    margin-top: 10px; 
-    margin-bottom: 10px; 
-    padding: 0 20px;
-    z-index: 11;
+  color: var(--firda-text-light);
+  font-family: 'Georgia', serif;
+  font-size: 30px;
+  text-align: center;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  padding: 0 20px;
+  z-index: 11;
 }
-/* Achtergrondvormen animatie (Subtiele gloed op donkere achtergrond) */
-.shape { 
-  position: absolute; 
-  border-radius: 50%; 
-  opacity: 0.15; /* Zeer subtiel op donkere achtergrond */
-  animation: float 25s infinite ease-in-out; 
-  /* Subtiele witte of zeer lichtgroene gloed */
+
+/* Achtergrondvormen animatie */
+.shape {
+  position: absolute;
+  border-radius: 50%;
+  opacity: 0.15;
+  animation: float 25s infinite ease-in-out;
   background: radial-gradient(circle, rgba(255, 255, 255, 0.4) 0%, rgba(255, 255, 255, 0) 70%);
 }
 
@@ -63,57 +69,169 @@
 .shape3 { width:180px; height:180px; top:85%; left:25%; animation-duration:35s; }
 
 @keyframes float {
-  0% {transform:translateY(0) translateX(0) rotate(0deg);}
-  50% {transform:translateY(-60px) translateX(40px) rotate(30deg);}
-  100% {transform:translateY(0) translateX(0) rotate(0deg);}
+  0% { transform: translateY(0) translateX(0) rotate(0deg); }
+  50% { transform: translateY(-60px) translateX(40px) rotate(30deg); }
+  100% { transform: translateY(0) translateX(0) rotate(0deg); }
 }
 
-
+/* Taalkeuze knoppen */
 .langBtn {
-  display: flex; 
-  align-items: center; 
-  justify-content: center; 
+  display: flex;
+  align-items: center;
+  justify-content: center;
   gap: 15px;
   background: var(--firda-accent-btn);
-  border: none; 
+  border: none;
   padding: 0 25px;
   font-size: 1.3em;
   font-weight: 700;
-  color: var(--firda-text-dark); 
-  width: 350px; 
-  height: 70px; 
-  transition: all 0.3s ease; 
-  position: relative; 
-  z-index: 11;
+  color: var(--firda-text-dark);
+  width: 350px;
+  height: 70px;
+  transition: all 0.3s ease;
   border-radius: 20px;
- 
-}
-.langBtn:hover { 
-  /* Knoppen worden iets donkerder bij hover, maar behouden de kleur */
-  background: #e2b339; 
-  transform: translateY(-3px) scale(1.03); 
-  box-shadow: 0 10px 20px rgba(0,0,0,0.3); 
-}
-.langBtn img { 
-  width: 50px; /* Iets kleinere vlaggen */
-  height: 50px; 
-  border-radius: 50%; 
-  border: 2px solid var(--firda-text-dark); /* Donkere rand om de vlag */
-  transition: transform 0.3s ease; 
-}
-.langBtn:hover img { 
-  transform: scale(1.1) rotate(0deg); /* Minder draaiing, meer strakke look */
+  z-index: 11;
 }
 
-/* Tekstkleur van de knoppen bovenaan (Feedback, Instellingen) ook aanpassen voor zichtbaarheid */
-.google-form-button, #openSettingsBtn {
+.langBtn:hover {
+  background: #e2b339;
+  transform: translateY(-3px) scale(1.03);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+}
+
+.langBtn img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: 2px solid var(--firda-text-dark);
+  transition: transform 0.3s ease;
+}
+
+.langBtn:hover img {
+  transform: scale(1.1);
+}
+
+/* Instellingenknop (feedback knop is bewust NIET toegevoegd) */
+#openSettingsBtn {
+  position: fixed;
+  top: 20px;
+  right: 200px;
+  z-index: 90;
+  background-color: rgba(60, 82, 75, 0.7);
   color: var(--firda-text-light);
-  background-color: rgba(60, 82, 75, 0.7); /* Transparante variant van de achtergrond */
+  padding: 10px 20px;
+  font-size: 16px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
 }
 
-.logo{ 
- position: absolute; 
- top: 580px; right: 20px; 
- width: 100px; 
-  z-index: 11; 
-  }
+#openSettingsBtn:hover {
+  background-color: #555;
+  transform: scale(1.05);
+}
+
+#openSettingsBtn:active {
+  transform: scale(0.98);
+}
+
+/* Audio players */
+#audioNL, #audioDE, #audioEN {
+  width: 300px;
+  display: none;
+}
+
+/* Mute knop */
+#mutebutton {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  border: none;
+  padding: 12px 20px;
+  background: transparent;
+  cursor: pointer;
+  z-index: 10;
+}
+
+/* Play audio button */
+.play-audio-btn {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  padding: 10px 16px;
+  font-size: 16px;
+  background-color: #008CBA;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  z-index: 1000;
+}
+
+.play-audio-btn:hover { background-color: #0072A3; }
+.play-audio-btn:active { background-color: #005f85; }
+
+/* Onderste tekstvak */
+#bottomText {
+  position: fixed;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90%;
+  max-height: 200px;
+  overflow-y: auto;
+  padding: 12px 20px;
+  font-size: 1.1em;
+  color: black;
+  background-color: rgba(255, 255, 255, 0.65);
+  border-radius: 15px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  display: none;
+  z-index: 20;
+}
+
+#bottomText::-webkit-scrollbar { width: 8px; }
+#bottomText::-webkit-scrollbar-thumb {
+  background-color: #888;
+  border-radius: 10px;
+}
+#bottomText::-webkit-scrollbar-thumb:hover { background-color: #555; }
+
+/* Label container */
+.label-container {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  margin-top: 50px;
+  font-family: Arial, sans-serif;
+}
+
+.label-container label {
+  background-color: #f0f0f0;
+  color: #333;
+  padding: 10px 20px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 20px;
+  font-weight: bold;
+  min-width: 80px;
+  box-shadow: 2px 2px 5px rgba(0,0,0,0.1);
+  transition: transform 0.2s;
+}
+
+.label-container label:hover {
+  transform: scale(1.1);
+  background-color: #e0e0e0;
+  cursor: pointer;
+}
+
+/* Algemene logo fallback */
+.logo {
+  position: absolute;
+  top: 580px;
+  right: 20px;
+  width: 100px;
+  z-index: 11;
+}

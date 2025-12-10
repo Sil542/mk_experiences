@@ -2,7 +2,6 @@
 :root {
   --firda-dark-bg: #3c524b; /* Donkergroene/antraciet achtergrond */
   --firda-accent-btn: #f5c441; /* Warme okergele accentkleur */
-  --firda-accent-btn-hover: #e2b339; /* Iets donkerder bij hover */
   --firda-text-light: #ffffff; /* Witte tekst */
   --firda-text-dark: #2f3640; /* Donkere tekst voor koppen/counters */
 }
@@ -58,11 +57,6 @@ header p {
   transition: transform 0.3s, box-shadow 0.3s;
   /* Dunne, subtiele rand in de donkere kleur */
   border: 1px solid rgba(60, 82, 75, 0.2); 
-}
-
-.country-counter:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 12px 25px rgba(0,0,0,0.4); /* Meer opvallende schaduw bij hover */
 }
 
 /* Vlaggen en overige stijlen blijven ongewijzigd */
