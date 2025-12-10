@@ -1,0 +1,97 @@
+/* --- Firda Campagne Stijl Definities --- */
+:root {
+  --firda-dark-bg: #3c524b; /* Donkergroene/antraciet achtergrond */
+  --firda-accent-btn: #f5c441; /* Warme okergele accentkleur */
+  --firda-accent-btn-hover: #e2b339; /* Iets donkerder bij hover */
+  --firda-text-light: #ffffff; /* Witte tekst */
+  --firda-text-dark: #2f3640; /* Donkere tekst voor koppen/counters */
+}
+
+/* Algemene body-styling */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  /* Achtergrond aangepast naar een zachtere Firda-tint */
+  background: linear-gradient(135deg, var(--firda-dark-bg), #5a756b); 
+  color: #333;
+  margin: 0;
+  padding: 0;
+}
+
+/* Titel van de admin pagina */
+header {
+  text-align: center;
+  padding: 40px 20px;
+  color: var(--firda-text-light); /* Witte tekst */
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.6); /* Donkere schaduw */
+  background-color: var(--firda-dark-bg); /* Hoog contrast header-balk */
+}
+
+header h1 {
+  font-size: 2.5em;
+  margin-bottom: 10px;
+}
+
+header p {
+  font-size: 1.2em;
+  opacity: 0.9;
+}
+
+/* Container voor landen-cards */
+.label-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 30px;
+  padding: 40px 20px;
+}
+
+/* Landen-kaart (Card) */
+.country-counter {
+  background-color: var(--firda-text-light); /* Witte/zeer lichte kaart */
+  border-radius: 15px;
+  padding: 20px 25px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  min-width: 220px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+  transition: transform 0.3s, box-shadow 0.3s;
+  /* Dunne, subtiele rand in de donkere kleur */
+  border: 1px solid rgba(60, 82, 75, 0.2); 
+}
+
+.country-counter:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 25px rgba(0,0,0,0.4); /* Meer opvallende schaduw bij hover */
+}
+
+/* Vlaggen en overige stijlen blijven ongewijzigd */
+/* ... (flag, nl, de, uk stijlen hier laten) ... */
+
+/* Tekst-container binnen kaart */
+.country-counter div {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Landen-naam */
+.country-counter h4 {
+  margin: 0 0 8px 0;
+  font-size: 1.2em;
+  color: var(--firda-text-dark); /* Donkere koptekst */
+}
+
+/* Counters */
+label {
+  font-size: 1.5em;
+  font-weight: bold;
+  padding: 8px 15px;
+  border-radius: 8px;
+  /* Counter-achtergrond in de okergele accentkleur */
+  background-color: var(--firda-accent-btn);
+  color: var(--firda-text-dark); /* Donkere counter-tekst */
+  min-width: 50px;
+  text-align: center;
+  /* Optioneel: lichte schaduw voor de counter */
+  box-shadow: 1px 1px 3px rgba(0,0,0,0.1); 
+}
