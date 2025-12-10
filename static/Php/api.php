@@ -2,9 +2,9 @@
 // --- CONFIGURATIE ---
 $webhookUrl = "https://canary.discord.com/api/webhooks/1433427430445682688/sdizPzVEYSED3CySehUamhvkVwwyZvhrS8vnNkx_AeZsWwzXHygiELTHxY0PVq04L45h";
 $host = "localhost";
-$db   = "apitest";
-$user = "root";
-$pass = "";
+$db   = "mkexperience";
+$user = "mkexperience";
+$pass = "museum!";
 $table = "counters";
 
 // --- DATABASE VERBINDING ---
@@ -15,13 +15,6 @@ try {
     die(json_encode(["error" => "Database connectie mislukt: " . $e->getMessage()]));
 }
 
-// --- WEBHOOK CONFIG LADEN ---
-$configFile = __DIR__ . '/../json/webhook_config.json';
-if (!file_exists($configFile)) {
-    file_put_contents($configFile, json_encode(["enabled" => true], JSON_PRETTY_PRINT));
-}
-$config = json_decode(file_get_contents($configFile), true);
-$webhookEnabled = $config['enabled'] ?? true;
 
 // --- POST: teller verhogen ---
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
