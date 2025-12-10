@@ -1,4 +1,4 @@
-
+// gets values from database
 async function loadCounters() {
   try {
     const res = await fetch("../static/Php/api.php"); // GET request
@@ -12,9 +12,9 @@ async function loadCounters() {
   }
 }
 
-// Load counters zodra pagina opent
+// Load counters asap page loaded
 window.addEventListener("DOMContentLoaded", loadCounters);
 
-// Optioneel: automatisch elke 5 seconden verversen
+// refershes counters every 5 seconds
 setInterval(loadCounters, 5000);
 

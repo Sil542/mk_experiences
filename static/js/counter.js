@@ -3,13 +3,7 @@ let countNL = 0;
 let countEn = 0;
 let countDe = 0;
 
-//Connectie naar webhook
-const webhookURL =
-  "https://canary.discord.com/api/webhooks/1433427430445682688/sdizPzVEYSED3CySehUamhvkVwwyZvhrS8vnNkx_AeZsWwzXHygiELTHxY0PVq04L45h";
-
-
 // get all information 
-
 export function initCounters() {
   loadCountersFromStorage();
   setupCounterButtons();

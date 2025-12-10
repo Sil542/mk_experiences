@@ -37,4 +37,7 @@ function initSettingsButton() {
   });
 }
 
-init();
+document.addEventListener("DOMContentLoaded", () => {
+  init();
+});
+
