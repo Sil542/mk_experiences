@@ -2,17 +2,19 @@
 <html lang="nl">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, user-scalable=no">
   <title>AR.js Meertalig Startscherm</title>
   <link rel="stylesheet" href="../static/css/style.css">
 
   <!--  Bibliotheken -->
-  <script src="../static/js/javascript.js" defer></script>
+  <script type="module" src="../static/js/main.js" defer></script>
   <script src="https://aframe.io/releases/1.4.2/aframe.min.js"></script>
   <script src="https://cdn.rawgit.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
 
 </head>
 <body>
-
+  <!-- Knop om instellingen te openen -->
+    <button id="openSettingsBtn">Instellingen</button>
 <!--  Startscherm -->
 <div id="startscreen">
   <div class="shape shape1"></div>
@@ -21,9 +23,9 @@
 
   <img id="logo" src="../static/images/MuseumLogo.jpg" alt="Logo">
 
-  <button class="langBtn" data-lang="NL"><img src="../static/images/NL_flag.png"><span>Nederlands</span></button>
-  <button class="langBtn" data-lang="EN"><img src="../static/images/EN_flag.png"><span>English</span></button>
-  <button class="langBtn" data-lang="DE"><img src="../static/images/DE_flag.png"><span>Deutsch</span></button>
+  <button id = "NederlandsBtn"class="langBtn" data-lang="NL"><img src="../static/images/NL_flag.png"><span>Nederlands</span></button>
+  <button id = "EngelsBtn"class="langBtn"     data-lang="EN"><img src="../static/images/EN_flag.png"><span>English</span></button>
+  <button id = "DuitsBtn"class="langBtn"      data-lang="DE"><img src="../static/images/DE_flag.png"><span>Deutsch</span></button>
 
 </div>
 
@@ -34,11 +36,17 @@
 <a-scene embedded arjs="trackingMethod: best; debugUIEnabled: true;">
 
   <!-- Marker 1: VISSERVROUW -->
-  <a-marker id="markerVISSERVROUW" type="pattern" url="../static/patt/Visservrouw.patt">
+  <a-marker id="markerWURM" type="pattern" url="../static/patt/Visservrouw.patt">
     <a-entity gltf-model="url(../static/glb/poppetje.glb)" scale="4 4 4" rotation="-90 0 0"></a-entity>
   </a-marker>
+  
    <!-- Marker 2: Jongetje -->
   <a-marker id="markerJONGETJE" type="pattern" url="../static/patt/Woonkamer.patt">
+    <a-entity gltf-model="url(../static/glb/jongetje.glb)" scale="4 4 4" rotation="-90 0 0"></a-entity>
+  </a-marker>
+
+  <!--Marker 3: Monument ramp-->
+  <a-marker id="markerRAMP" type="pattern" url="../static/patt/marker_ramp.patt">
     <a-entity gltf-model="url(../static/glb/jongetje.glb)" scale="4 4 4" rotation="-90 0 0"></a-entity>
   </a-marker>
 
@@ -49,9 +57,9 @@
 </a-scene>
 
 <!--  Audio bestanden -->
-<audio id="audioVISSERVROUW_NL" src="../static/mp3/NL.mp3"></audio>
-<audio id="audioVISSERVROUW_DE" src="../static/mp3/DE.mp3"></audio>
-<audio id="audioVISSERVROUW_EN" src="../static/mp3/EN.mp3"></audio>
+<audio id="audioWURM_NL" src="../static/mp3/NL.mp3"></audio>
+<audio id="audioWURM_DE" src="../static/mp3/DE.mp3"></audio>
+<audio id="audioWURM_EN" src="../static/mp3/EN.mp3"></audio>
 
 <audio id="audioJONGETJE_NL" src="../static/mp3/jongetje_NL.mp3"></audio>
 <audio id="audioJONGETJE_DE" src="../static/mp3/jongetje_DE.mp3"></audio>

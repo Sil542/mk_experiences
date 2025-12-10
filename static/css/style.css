@@ -14,16 +14,16 @@ body {
 
 .google-form-button {
   position: fixed;
-  top: 20px;
-  right: 90px;
+  top: 1.25rem;          /* 20px */
+  right: 5.625rem;       /* 90px */
   z-index: 90;
   background-color: #05be33;
   color: white;
-  padding: 10px 20px;
-  font-size: 16px;
+  padding: 0.625rem 1.25rem;  /* 10px 20px */
+  font-size: 1rem;       /* 16px */
   font-family: Arial, sans-serif;
   border: none;
-  border-radius: 8px;
+  border-radius: 0.5rem; /* 8px */
   cursor: pointer;
   transition: background-color 0.3s, transform 0.2s;
 }
@@ -37,21 +37,48 @@ body {
   transform: scale(0.98);
 }
 
-/* Style voor de knop bovenaan rechts op het scherm */
+/* Instellingenknop */
+#openSettingsBtn {
+  position: fixed;
+  top: 1.25rem;          /* 20px */
+  right: 12.5rem;        /* 200px */
+  z-index: 90;
+  background-color: #333;
+  color: white;
+  padding: 0.625rem 1.25rem;
+  font-size: 1rem;
+  font-family: Arial, sans-serif;
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+#openSettingsBtn:hover {
+  background-color: #555;
+  transform: scale(1.05);
+}
+
+#openSettingsBtn:active {
+  transform: scale(0.98);
+}
+
+/* Audio play button */
 .play-audio-btn {
   position: fixed;
-  top: 20px;
-  right: 20px;
-  padding: 10px 16px;
-  font-size: 16px;
-  background-color: #008CBA; /* blauw */
+  top: 25rem;
+  right: 1.25rem;
+  padding: 0.625rem 1rem;
+  font-size: 1rem;
+  background-color: #008CBA;
   color: white;
   border: none;
-  border-radius: 6px;
+  border-radius: 0.375rem;
   cursor: pointer;
   transition: background-color 0.2s ease;
   z-index: 1000; 
 }
+
 
 .play-audio-btn:hover {
   background-color: #0072A3;
@@ -61,132 +88,167 @@ body {
   background-color: #005f85;
 }
 
-
+#logo_firda { 
+  position: absolute; 
+  top: 36.25rem;   
+  right: 0.9375rem;
+  width: 6.25rem;  
+  z-index: 11; 
+}
 
 #logo { 
-      position: absolute; 
-      top: 580px; right: 20px; 
-      width: 100px; 
-      z-index: 11; 
-    }
+  position: absolute; 
+  top: 36.25rem;
+  right: 1.25rem;
+  width: 6.25rem;
+  z-index: 11; 
+}
 
+/* Audio */
+#audioNL, #audioDE, #audioEN { 
+  width: 18.75rem; 
+  display: none; 
+}
 
-    /*  Audio en mute-knop */
-    #audioNL, #audioDE, #audioEN { width: 300px; display: none; }
+#mutebutton {
+  position: fixed;
+  top: 1.25rem;
+  right: 1.25rem;
+  background-color: none;
+  color: none;
+  border: none;
+  padding: 0.75rem 1.25rem;
+  font-size: 1rem;
+  border-radius: 0.3125rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  z-index: 10;
+}
+#mutebutton:hover { background-color: none; }
 
-    #mutebutton {
-      position: fixed;
-      top: 20px;
-      right: 20px;
-      background-color: none;
-      color: none;
-      border: none;
-      padding: 12px 20px;
-      font-size: 16px;
-      border-radius: 5px;
-      cursor: pointer;
-      transition: background-color 0.3s ease;
-      z-index: 10;
-    }
-    #mutebutton:hover { background-color: none; }
+/* Startscreen */
+#startscreen {
+  position: absolute; 
+  top: 0; left: 0; 
+  width: 100%; height: 100%; 
+  background: #0b1a33;
+  display: flex; 
+  justify-content: center; 
+  align-items: center; 
+  flex-direction: column; 
+  gap: 1.5625rem;
+  z-index: 10; 
+  overflow: hidden;
+}
 
-    /*  Startscherm */
-    #startscreen {
-      position: absolute; 
-      top: 0; left: 0; 
-      width: 100%; height: 100%; 
-      background: #0b1a33;
-      display: flex; 
-      justify-content: center; 
-      align-items: center; 
-      flex-direction: column; 
-      gap: 25px; 
-      z-index: 10; 
-      overflow: hidden;
-    }
+/* Background shapes */
+.shape { 
+  position: absolute; 
+  border-radius: 50%; 
+  opacity: 0.3; 
+  animation: float 20s infinite ease-in-out;
+  background: radial-gradient(circle, rgba(255,255,255,0.4) 0%, rgba(255,255,255,0) 70%);
+}
+.shape1 { width:12.5rem; height:12.5rem; top:10%; left:5%; animation-duration:25s; }
+.shape2 { width:18.75rem; height:18.75rem; top:50%; left:70%; animation-duration:35s; }
+.shape3 { width:9.375rem; height:9.375rem; top:80%; left:20%; animation-duration:30s; }
 
-    /*  Achtergrondvormen animatie */
-    .shape { 
-      position: absolute; 
-      border-radius: 50%; 
-      opacity: 0.3; 
-      animation: float 20s infinite ease-in-out;
-      background: radial-gradient(circle, rgba(255,255,255,0.4) 0%, rgba(255,255,255,0) 70%);
-    }
-    .shape1 { width:200px; height:200px; top:10%; left:5%; animation-duration:25s; }
-    .shape2 { width:300px; height:300px; top:50%; left:70%; animation-duration:35s; }
-    .shape3 { width:150px; height:150px; top:80%; left:20%; animation-duration:30s; }
+@keyframes float {
+  0% {transform:translateY(0) translateX(0) rotate(0deg);}
+  50% {transform:translateY(-3.125rem) translateX(1.875rem) rotate(45deg);}
+  100% {transform:translateY(0) translateX(0) rotate(0deg);}
+}
 
-    @keyframes float {
-      0% {transform:translateY(0) translateX(0) rotate(0deg);}
-      50% {transform:translateY(-50px) translateX(30px) rotate(45deg);}
-      100% {transform:translateY(0) translateX(0) rotate(0deg);}
-    }
+/* Language buttons */
+.langBtn {
+  display: flex; 
+  align-items: center; 
+  justify-content: center; 
+  gap: 0.9375rem; 
+  background: linear-gradient(135deg, #4facfe, #00f2fe);
+  border: none; 
+  border-radius: 1.875rem;
+  padding: 0 1.5625rem; 
+  font-size: 1.2em; 
+  font-weight: 600; 
+  color: white; 
+  cursor: pointer;
+  width: 20rem; 
+  height: 5rem; 
+  box-shadow: 0 0.5rem 1.5625rem rgba(0,0,0,0.25);
+  transition: all 0.3s ease; 
+  position: relative; 
+  z-index: 11;
+}
+.langBtn:hover { 
+  transform: translateY(-0.3125rem) scale(1.05);
+  box-shadow: 0 0.9375rem 2.1875rem rgba(0,0,0,0.3); 
+}
+.langBtn img { 
+  width: 3.75rem;
+  height: 3.75rem; 
+  border-radius: 50%; 
+  transition: transform 0.3s ease; 
+}
+.langBtn:hover img { 
+  transform: scale(1.1) rotate(5deg); 
+}
 
-    /*  Logo */
-    
+/* Bottom text box */
+#bottomText {
+  position: fixed;
+  bottom: 0; 
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90%;
+  max-height: 12.5rem;
+  overflow-y: auto;
+  padding: 0.75rem 1.25rem;
+  text-align: center;
+  font-size: 1.1em;
+  line-height: 1.4em;
+  color: black;
+  background-color: rgba(255, 255, 255, 0.65);
+  border-radius: 0.9375rem; /* 15px */
+  box-shadow: 0 0.25rem 0.625rem rgba(0,0,0,0.2);
+  display: none;
+  z-index: 20;
+  scrollbar-width: thin;
+  scrollbar-color: #888 #f0f0f0;
+}
 
-    /*  Taalkeuze knoppen */
-    .langBtn {
-      display: flex; 
-      align-items: center; 
-      justify-content: center; 
-      gap: 15px;
-      background: linear-gradient(135deg, #4facfe, #00f2fe);
-      border: none; 
-      border-radius: 30px; 
-      padding: 0 25px;
-      font-size: 1.2em; 
-      font-weight: 600; 
-      color: white; 
-      cursor: pointer;
-      width: 320px; 
-      height: 80px; 
-      box-shadow: 0 8px 25px rgba(0,0,0,0.25);
-      transition: all 0.3s ease; 
-      position: relative; 
-      z-index: 11;
-    }
-    .langBtn:hover { 
-      transform: translateY(-5px) scale(1.05); 
-      box-shadow: 0 15px 35px rgba(0,0,0,0.3); 
-    }
-    .langBtn img { 
-      width: 60px; 
-      height: 60px; 
-      border-radius: 50%; 
-      transition: transform 0.3s ease; 
-    }
-    .langBtn:hover img { 
-      transform: scale(1.1) rotate(5deg); 
-    }
+#bottomText::-webkit-scrollbar { width: 0.5rem; }
+#bottomText::-webkit-scrollbar-thumb {
+  background-color: #888;
+  border-radius: 0.625rem;
+}
+#bottomText::-webkit-scrollbar-thumb:hover { background-color: #555; }
 
-    /*  Onderaan tekstvak */
-    #bottomText {
-      position: fixed;
-      bottom: 0px; /* iets hoger dan onderkant */
-      left: 50%;
-      transform: translateX(-50%);
-      width: 90%;
-      max-height: 200px; /* hoogte beperken */
-      overflow-y: auto; /* verticaal scrollen */
-      padding: 12px 20px;
-      text-align: center;
-      font-size: 1.1em;
-      line-height: 1.4em;
-      color: black; /* tekst zwart */
-      background-color: rgba(255, 255, 255, 0.65); /* witte achtergrond */
-      border-radius: 15px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-      display: none;
-      z-index: 20;
-      scrollbar-width: thin;
-      scrollbar-color: #888 #f0f0f0;
-    }
+/* Label container */
+.label-container {
+  display: flex;
+  gap: 1.25rem; 
+  justify-content: center;
+  margin-top: 3.125rem; 
+  font-family: Arial, sans-serif;
+}
 
-    #bottomText::-webkit-scrollbar { width: 8px; }
-    #bottomText::-webkit-scrollbar-thumb {
-      background-color: #888;
-      border-radius: 10px;
-    }
-    #bottomText::-webkit-scrollbar-thumb:hover { background-color: #555; }
+.label-container label {
+  background-color: #f0f0f0;
+  color: #333;
+  padding: 0.625rem 1.25rem;
+  border-radius: 0.5rem;
+  border: 0.0625rem solid #ccc; 
+  font-size: 1.25rem;
+  font-weight: bold;
+  text-align: center;
+  min-width: 5rem; 
+  box-shadow: 0.125rem 0.125rem 0.3125rem rgba(0,0,0,0.1);
+  transition: transform 0.2s;
+}
+
+.label-container label:hover {
+  transform: scale(1.1);
+  background-color: #e0e0e0;
+  cursor: pointer;
+}
