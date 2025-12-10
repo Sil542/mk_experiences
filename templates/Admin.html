@@ -3,26 +3,43 @@
 <head>
   <meta charset="UTF-8">
   <title>Admin – Tellers</title>
-  <link rel="stylesheet" href="../static/css/style.css">
+  <link rel="stylesheet" href="../static/css/style1.css">
   <script type="module" src="../static/js/main.js" defer></script>
   <script src="../static/js/counteradmin.js" defer></script>
-   <script src="../static/js/webhook.js" defer></script>
+  <script src="../static/js/webhook.js" defer></script>
 </head>
 <body>
-  <h1>Admin Teller Overzicht</h1>
 
-  <div class="label-container">
-    <h4>Nederlands</h4>
-    <label id="LabelcounterNL1">0</label>
-    <h4>Engels</h4>
-    <label id="LabelcounterEn1">0</label>
-    <h4>Duits</h4>
-    <label id="LabelcounterDE1">0</label>
+<header>
+  <h1>Admin Panel – Tellers</h1>
+  <p>Overzicht van de bezoekers per taal</p>
+</header>
+
+<div class="label-container">
+  <div class="country-counter">
+    <div class="flag nl"></div>
+    <div>
+      <h4>Nederlands</h4>
+      <label id="LabelcounterNL1">0</label>
+    </div>
   </div>
 
-<h2>Webhook Beheer</h2>
-<button id="toggleWebhookBtn">Webhook status laden...</button>
+  <div class="country-counter">
+    <div class="flag uk"></div>
+    <div>
+      <h4>Engels</h4>
+      <label id="LabelcounterEn1">0</label>
+    </div>
+  </div>
 
+  <div class="country-counter">
+    <div class="flag de"></div>
+    <div>
+      <h4>Duits</h4>
+      <label id="LabelcounterDE1">0</label>
+    </div>
+  </div>
+</div>
 
 </body>
 </html>

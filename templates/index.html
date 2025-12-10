@@ -2,7 +2,7 @@
 <html lang="nl">
 <head>
   <meta charset="UTF-8">
-  <title>AR.js Meertalig Startscherm</title>
+  <title>Wetterwrâld</title>
   <link rel="stylesheet" href="../static/css/style.css">
 
   <!--  Bibliotheken -->
@@ -23,6 +23,9 @@
     <button id="openSettingsBtn">Instellingen</button>
 <!--  Startscherm -->
 <div id="startscreen">
+    <h1 id="startTitle">
+        Wetterwrâld
+    </h1>
   <div class="shape shape1"></div>
   <div class="shape shape2"></div>
   <div class="shape shape3"></div>
@@ -49,6 +52,14 @@
   <a-marker id="markerJONGETJE" type="pattern" url="../static/patt/Woonkamer.patt">
     <a-entity gltf-model="url(../static/glb/jongetje.glb)" scale="4 4 4" rotation="-90 0 0"></a-entity>
   </a-marker>
+  <!--Marker3:  Vrouw met wurm-->
+  <a-marker id="markerWURM" type="pattern" url="../static/patt/Wurmvrouw.patt">
+    <a-entity gltf-model="url(../static/glb/Wurmvrouw.glb)" scale="4 4 4" rotation="-90 0 0"></a-entity>
+  </a-marker>
+<!--Robbenjacht-->
+  <a-marker id="monument" type="pattern" url="../static/patt/Wurmvrouw.patt">
+    <a-entity gltf-model="url(../static/glb/Wurmvrouw.glb)" scale="4 4 4" rotation="-90 0 0"></a-entity>
+  </a-marker>
 
   <a-entity camera></a-entity>
 </a-scene>
@@ -64,12 +75,33 @@
 <audio id="audioJONGETJE_NL" src="../static/mp3/jongetje_NL.mp3"></audio>
 <audio id="audioJONGETJE_DE" src="../static/mp3/jongetje_DE.mp3"></audio>
 <audio id="audioJONGETJE_EN" src="../static/mp3/jongetje_EN.mp3"></audio>
+<!--Wurmvrouw-->
+<audio id="audioJONGETJE_NL" src="../static/mp3/jongetje_NL.mp3"></audio>
+<audio id="audioJONGETJE_DE" src="../static/mp3/jongetje_DE.mp3"></audio>
+<audio id="audioJONGETJE_EN" src="../static/mp3/jongetje_EN.mp3"></audio>
+<!--monument-->
+<audio id="audioJONGETJE_NL" src="../static/mp3/jongetje_NL.mp3"></audio>
+<audio id="audioJONGETJE_DE" src="../static/mp3/jongetje_DE.mp3"></audio>
+<audio id="audioJONGETJE_EN" src="../static/mp3/jongetje_EN.mp3"></audio>
+<!-- robbenjacht -->
+<audio id="audioJONGETJE_NL" src="../static/mp3/jongetje_NL.mp3"></audio>
+<audio id="audioJONGETJE_DE" src="../static/mp3/jongetje_DE.mp3"></audio>
+<audio id="audioJONGETJE_EN" src="../static/mp3/jongetje_EN.mp3"></audio>
 
-<button 
-  class="google-form-button"
-  onclick="window.location.href='https://docs.google.com/forms/d/e/1FAIpQLSduIYx74WvWJ7fLMNlH7zqheRPlyHnjoqebG-GIz9LahildKg/viewform?usp=dialog'">
-  Feedback
-</button>
+
+
+<!--Wurmvrouw-->
+<audio id="audioJONGETJE_NL" src="../static/mp3/jongetje_NL.mp3"></audio>
+<audio id="audioJONGETJE_DE" src="../static/mp3/jongetje_DE.mp3"></audio>
+<audio id="audioJONGETJE_EN" src="../static/mp3/jongetje_EN.mp3"></audio>
+<!--monument-->
+<audio id="audioJONGETJE_NL" src="../static/mp3/jongetje_NL.mp3"></audio>
+<audio id="audioJONGETJE_DE" src="../static/mp3/jongetje_DE.mp3"></audio>
+<audio id="audioJONGETJE_EN" src="../static/mp3/jongetje_EN.mp3"></audio>
+<!--Robbenjacht-->
+<audio id="audioJONGETJE_NL" src="../static/mp3/jongetje_NL.mp3"></audio>
+<audio id="audioJONGETJE_DE" src="../static/mp3/jongetje_DE.mp3"></audio>
+<audio id="audioJONGETJE_EN" src="../static/mp3/jongetje_EN.mp3"></audio>
 
 
 </body>
