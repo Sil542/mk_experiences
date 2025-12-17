@@ -45,20 +45,24 @@
 <a-scene embedded arjs="trackingMethod: best; debugUIEnabled: true;">
 
   <!-- Marker 1: VISSERVROUW -->
-  <a-marker id="markerVISSERVROUW" type="pattern" url="../static/patt/Visservrouw.patt">
+  <a-marker id="markerVISSERVROUW" type="pattern" url="../static/patt/marker_visservrouw.patt">
     <a-entity gltf-model="url(../static/glb/Visservrouwkleur_test.glb)" scale="1 1 1" rotation="-90 0 0"></a-entity>
   </a-marker>
    <!-- Marker 2: Jongetje -->
-  <a-marker id="markerJONGETJE" type="pattern" url="../static/patt/Woonkamer.patt">
-    <a-entity gltf-model="url(../static/glb/jongetje.glb)" scale="4 4 4" rotation="-90 0 0"></a-entity>
+  <a-marker id="markerJONGETJE" type="pattern" url="../static/patt/marker_jongetje.patt">
+    <a-entity gltf-model="url(../static/glb/jongetje1.glb)" scale="1 1 1" rotation="-90 0 0"></a-entity>
   </a-marker>
   <!--Marker3:  Vrouw met wurm-->
-  <a-marker id="markerWURM" type="pattern" url="../static/patt/Wurmvrouw.patt">
-    <a-entity gltf-model="url(../static/glb/Wurmvrouw.glb)" scale="4 4 4" rotation="-90 0 0"></a-entity>
+  <a-marker id="markerWORM" type="pattern" url="../static/patt/marker_worm.patt">
+    <a-entity gltf-model="url(../static/glb/Gerda.glb)" scale="1 1 1" rotation="-90 0 0"></a-entity>
   </a-marker>
-<!--Robbenjacht-->
-  <a-marker id="monument" type="pattern" url="../static/patt/Wurmvrouw.patt">
-    <a-entity gltf-model="url(../static/glb/Wurmvrouw.glb)" scale="4 4 4" rotation="-90 0 0"></a-entity>
+<!--Marker 4 Monument-->
+  <a-marker id="markerRAMP" type="pattern" url="../static/patt/marker_ramp.patt">
+    <a-entity gltf-model="url(../static/glb/monument.glb)" scale="1 1 1" rotation="-90 0 0"></a-entity>
+  </a-marker>
+<!--Marker 4 Robbenjacht-->
+   <a-marker id="markerROB" type="pattern" url="../static/patt/marker_rob.patt">
+    <a-entity gltf-model="url(../static/glb/zeehond.glb)" scale="1 1 1" rotation="-90 0 0"></a-entity>
   </a-marker>
 
   <a-entity camera></a-entity>
@@ -84,21 +88,6 @@
 <audio id="audioJONGETJE_DE" src="../static/mp3/jongetje_DE.mp3"></audio>
 <audio id="audioJONGETJE_EN" src="../static/mp3/jongetje_EN.mp3"></audio>
 <!-- robbenjacht -->
-<audio id="audioJONGETJE_NL" src="../static/mp3/jongetje_NL.mp3"></audio>
-<audio id="audioJONGETJE_DE" src="../static/mp3/jongetje_DE.mp3"></audio>
-<audio id="audioJONGETJE_EN" src="../static/mp3/jongetje_EN.mp3"></audio>
-
-
-
-<!--Wurmvrouw-->
-<audio id="audioJONGETJE_NL" src="../static/mp3/jongetje_NL.mp3"></audio>
-<audio id="audioJONGETJE_DE" src="../static/mp3/jongetje_DE.mp3"></audio>
-<audio id="audioJONGETJE_EN" src="../static/mp3/jongetje_EN.mp3"></audio>
-<!--monument-->
-<audio id="audioJONGETJE_NL" src="../static/mp3/jongetje_NL.mp3"></audio>
-<audio id="audioJONGETJE_DE" src="../static/mp3/jongetje_DE.mp3"></audio>
-<audio id="audioJONGETJE_EN" src="../static/mp3/jongetje_EN.mp3"></audio>
-<!--Robbenjacht-->
 <audio id="audioJONGETJE_NL" src="../static/mp3/jongetje_NL.mp3"></audio>
 <audio id="audioJONGETJE_DE" src="../static/mp3/jongetje_DE.mp3"></audio>
 <audio id="audioJONGETJE_EN" src="../static/mp3/jongetje_EN.mp3"></audio>

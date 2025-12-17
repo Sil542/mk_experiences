@@ -199,34 +199,6 @@ body {
 }
 #bottomText::-webkit-scrollbar-thumb:hover { background-color: #555; }
 
-/* Label container */
-.label-container {
-  display: flex;
-  gap: 20px;
-  justify-content: center;
-  margin-top: 50px;
-  font-family: Arial, sans-serif;
-}
-
-.label-container label {
-  background-color: #f0f0f0;
-  color: #333;
-  padding: 10px 20px;
-  border-radius: 8px;
-  border: 1px solid #ccc;
-  font-size: 20px;
-  font-weight: bold;
-  min-width: 80px;
-  box-shadow: 2px 2px 5px rgba(0,0,0,0.1);
-  transition: transform 0.2s;
-}
-
-.label-container label:hover {
-  transform: scale(1.1);
-  background-color: #e0e0e0;
-  cursor: pointer;
-}
-
 /* Algemene logo fallback */
 .logo {
   position: absolute;

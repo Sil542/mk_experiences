@@ -1,6 +1,5 @@
 <?php
 // --- CONFIGURATIE ---
-$webhookUrl = "https://canary.discord.com/api/webhooks/1433427430445682688/sdizPzVEYSED3CySehUamhvkVwwyZvhrS8vnNkx_AeZsWwzXHygiELTHxY0PVq04L45h";
 $host = "localhost";
 $db   = "mkexperience";
 $user = "mkexperience";
