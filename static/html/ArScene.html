@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+  <title>AR.js Meertalig Startscherm</title>
+  <link rel="stylesheet" href="../css/style.css">
+
+  <!--  Bibliotheken -->
+  <script type="module" src="../js/main.js" defer></script>
+  <script src="https://aframe.io/releases/1.4.2/aframe.min.js"></script>
+  <script src="https://cdn.rawgit.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
+
+</head>
+<body>
+<!-- Tekst onderin --> 
+<div id="bottomText"></div>
+<!--Settings Button-->
+<a href="../../templates/index.html" id="openSettingsBtn">
+    <img src="../images/setting.png" alt="Instellingen" width="24" height="24">
+</a>
+ 
+<!--  AR SCENE -->
+<a-scene embedded arjs="trackingMethod: best; debugUIEnabled: true;">
+
+  <!-- Marker 1: VISSERVROUW -->
+  <a-marker id="markerVISSERSVROUW" type="pattern" url="../patt/marker_vissersvrouw.patt">
+    <a-entity gltf-model="url(../glb/vissersvrouw.glb)" scale="1 1 1" rotation="-90 0 0"></a-entity>
+  </a-marker>
+
+  <!-- Marker 1: VISSERVROUW -->
+  <a-marker id="markerWURM" type="pattern" url="../patt/marker_worm.patt">
+    <a-entity gltf-model="url(../glb/worm.glb)" scale="1 1 1" rotation="-90 0 0"></a-entity>
+  </a-marker>
+  
+  
+   <!-- Marker 2: Jongetje -->
+  <a-marker id="markerJONGETJE" type="pattern" url="../patt/marker_jongetje.patt">
+    <a-entity gltf-model="url(../glb/jongetje.glb)" scale="1 1 1" rotation="-90 0 0"></a-entity>
+  </a-marker>
+
+  <!--Marker 3: Monument ramp-->
+  <a-marker id="markerRAMP" type="pattern" url="../patt/marker_ramp.patt">
+    <a-entity gltf-model="url(../glb/monument.glb)" scale="1 1 1" rotation="-90 0 0"></a-entity>
+  </a-marker>
+
+  <a-entity camera></a-entity>
+</a-scene>
+
+<!--  Audio bestanden -->
+<audio id="audioWURM_NL" src="../mp3/worm_nl.mp3"></audio>
+<audio id="audioWURM_DE" src="../mp3/worm_de.mp3"></audio>
+<audio id="audioWURM_EN" src="../mp3/worm_en.mp3"></audio>
+
+<audio id="audioVISSERSVROUW_NL" src="../mp3/vissersvrouw_nl.mp3"></audio>
+<audio id="audioVISSERSVROUW_DE" src="../mp3/visservrouw_de.mp3"></audio>
+<audio id="audioVISSERSVROUW_EN" src="../mp3/vissersvrouw_en.mp3"></audio>
+
+<audio id="audioJONGETJE_NL" src="../mp3/jongetje_nl.mp3"></audio>
+<audio id="audioJONGETJE_DE" src="../mp3/jongetje_de.mp3"></audio>
+<audio id="audioJONGETJE_EN" src="../mp3/jongetje_en.mp3"></audio>
+
+<audio id="audioRAMP_NL" src="../mp3/ramp_nl.mp3"></audio>
+<audio id="audioRAMP_DE" src="../mp3/ramp_de.mp3"></audio>
+<audio id="audioRAMP_EN" src="../mp3/ramp_en.mp3"></audio>
+
+</body>
+</html>

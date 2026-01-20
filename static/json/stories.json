@@ -1,5 +1,5 @@
 {
-  "VISSERVROUW": {
+  "VISSERSVROUW": {
     "NL": "In Moddergat en Wierum deden vissersvrouwen, de wjirmdolsters,<br>zwaar werk op het wad waarbij ze wormen groeven voor aas en daarom broeken, zware leren laarzen,<br>een strak jak, een kyps en een doek droegen; ze trokken beladen met greep en emmer bij eb het wad op,<br>soms urenlang, en hoewel er weinig artistieke vastlegging bestaat zijn er vanaf circa 1850 enkele beschrijvingen en beelden, terwijl een nog oudere bron uit 1734 vertelt hoe vijftig dolsters op Ameland in hun opvallende kleding de prins van Oranje verwelkomden,<br>wat laat zien dat dit werk en deze kleding al eeuwenlang onderdeel waren van de regionale visserscultuur.",
     "EN": "In Moddergat and Wierum, the fisherwomen known as wjirmdolsters,<br>performed heavy work on the mudflats digging worms for bait, wearing trousers, heavy leather boots,<br>a tight jacket, a kyps cap and a neck cloth; carrying a fork and bucket they walked onto the flats at low tide,<br>sometimes for hours, and although little artistic documentation exists there are some descriptions and images from around 1850, while an even earlier account from 1734 describes fifty dolsters on Ameland welcoming the Prince of Orange,<br>in their distinctive clothing, showing that this work and attire had been part of the regional fishing culture for centuries.",
     "DE": "In Moddergat und Wierum verrichteten die Fischerfrauen, die sogenannten Wjirmdolsters,<br>schwere Arbeit auf dem Watt, wo sie Würmer als Köder gruben und dafür Hosen, schwere Lederstiefel,<br>eine enge Jacke, eine Kyps-Mütze und ein Hals­tuch trugen; mit Forke und Eimer gingen sie bei Ebbe,<br>oft stundenlang ins Watt, und obwohl nur wenig künstlerische Dokumentation existiert, gibt es seit etwa 1850 einige Beschreibungen und Abbildungen, während ein noch älterer Bericht von 1734 schildert, wie fünfzig Dolsters auf Ameland den Prinzen von Oranien,<br>in ihrer auffälligen Kleidung begrüßten, was zeigt, dass diese Arbeit und Kleidung seit Jahrhunderten Teil der regionalen Fischereikultur waren."
@@ -28,6 +28,11 @@
     "NL": "Pauzeer audio",
     "EN": "Pause audio",
     "DE": "Audio pausieren"
+  }, 
+  "openSettingsBtn":{
+    "NL": "Instellingen",
+    "EN": "Settings",
+    "DE": "Einstellungen"
   }
 }
 

@@ -1,5 +1,3 @@
-/* Combined Firda-stijl CSS met ontbrekende onderdelen toegevoegd (zonder feedback-knop) */
-
 :root {
   --firda-dark-bg: #3c524b;
   --firda-accent-btn: #f5c441;
@@ -9,12 +7,18 @@
 
 /* Algemene body styling */
 body {
+  -webkit-user-select: none; /* Safari */
+  -ms-user-select: none;
+  user-select: none;
   margin: 0;
+  padding: 0;
   height: 100vh;
+  width: 100vw;
   overflow: hidden;
   font-family: Arial, sans-serif;
 }
 
+/* AR.js debug UI verbergen */
 #arjsDebugUIContainer { display: none; }
 
 /* Startscreen achtergrond */
@@ -22,36 +26,39 @@ body {
   position: absolute;
   top: 0;
   left: 0;
-  width: 100%;
-  height: 100%;
+  width: 100vw;
+  height: 100vh;
   background: linear-gradient(135deg, var(--firda-dark-bg) 0%, #4a625a 100%);
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  flex-direction: column;
-  gap: 30px;
+  gap: 3vh; 
+  padding: 2vh 2vw;
+  box-sizing: border-box;
   z-index: 10;
   overflow: hidden;
 }
 
-/* Logo in startscreen */
+/* Logo */
 #startscreen #logo {
-  position: relative;
-  margin-bottom: 40px;
-  width: 250px;
+  width: 25vw;
+  max-width: 250px;
+  min-width: 120px;
+  border-radius: 1rem;
+  padding: 0.5rem;
   z-index: 11;
-  border-radius: 20px;
-  padding: 5px;
+  margin-bottom: 3vh;
 }
 
+/* Titel */
 #startscreen #startTitle {
   color: var(--firda-text-light);
   font-family: 'Georgia', serif;
-  font-size: 30px;
+  font-size: 4vw;
   text-align: center;
-  margin-top: 10px;
-  margin-bottom: 10px;
-  padding: 0 20px;
+  margin: 0;
+  padding: 0 5vw;
   z-index: 11;
 }
 
@@ -64,13 +71,13 @@ body {
   background: radial-gradient(circle, rgba(255, 255, 255, 0.4) 0%, rgba(255, 255, 255, 0) 70%);
 }
 
-.shape1 { width:250px; height:250px; top:15%; left:10%; animation-duration:30s; }
-.shape2 { width:400px; height:400px; top:55%; left:65%; animation-duration:40s; }
-.shape3 { width:180px; height:180px; top:85%; left:25%; animation-duration:35s; }
+.shape1 { width: 20vw; height: 20vw; top: 10%; left: 5%; animation-duration:30s; }
+.shape2 { width: 35vw; height: 35vw; top: 55%; left: 60%; animation-duration:40s; }
+.shape3 { width: 15vw; height: 15vw; top: 80%; left: 20%; animation-duration:35s; }
 
 @keyframes float {
   0% { transform: translateY(0) translateX(0) rotate(0deg); }
-  50% { transform: translateY(-60px) translateX(40px) rotate(30deg); }
+  50% { transform: translateY(-5vh) translateX(4vw) rotate(30deg); }
   100% { transform: translateY(0) translateX(0) rotate(0deg); }
 }
 
@@ -79,52 +86,57 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 15px;
+  gap: 1vw;
   background: var(--firda-accent-btn);
   border: none;
-  padding: 0 25px;
-  font-size: 1.3em;
+  padding: 1vh 2vw;
+  font-size: 1.5vw;
   font-weight: 700;
   color: var(--firda-text-dark);
-  width: 350px;
-  height: 70px;
+  width: 60%;
+  max-width: 350px;
+  min-width: 150px;
+  height: 6vh;
   transition: all 0.3s ease;
-  border-radius: 20px;
+  border-radius: 1.5rem;
   z-index: 11;
+}
+
+.langBtn img {
+  width: 4vw;
+  max-width: 50px;
+  min-width: 30px;
+  height: auto;
+  border-radius: 50%;
+  border: 2px solid var(--firda-text-dark);
+  transition: transform 0.3s ease;
 }
 
 .langBtn:hover {
   background: #e2b339;
-  transform: translateY(-3px) scale(1.03);
-  box-shadow: 0 10px 20px rgba(0,0,0,0.3);
-}
-
-.langBtn img {
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  border: 2px solid var(--firda-text-dark);
-  transition: transform 0.3s ease;
+  transform: translateY(-2px) scale(1.03);
+  box-shadow: 0 0.5vh 2vh rgba(0,0,0,0.3);
 }
 
 .langBtn:hover img {
   transform: scale(1.1);
 }
 
-/* Instellingenknop (feedback knop is bewust NIET toegevoegd) */
+/* Instellingen knop - linksboven */
 #openSettingsBtn {
   position: fixed;
   top: 20px;
-  right: 200px;
-  z-index: 90;
+  left: 20px;
+  z-index: 1000;
   background-color: rgba(60, 82, 75, 0.7);
   color: var(--firda-text-light);
-  padding: 10px 20px;
+  padding: 10px 16px;
   font-size: 16px;
   border: none;
-  border-radius: 8px;
+  border-radius: 6px;
   cursor: pointer;
   transition: background-color 0.3s, transform 0.2s;
+  max-width: fit-content;
 }
 
 #openSettingsBtn:hover {
@@ -136,29 +148,12 @@ body {
   transform: scale(0.98);
 }
 
-/* Audio players */
-#audioNL, #audioDE, #audioEN {
-  width: 300px;
-  display: none;
-}
-
-/* Mute knop */
-#mutebutton {
-  position: fixed;
-  top: 20px;
-  right: 20px;
-  border: none;
-  padding: 12px 20px;
-  background: transparent;
-  cursor: pointer;
-  z-index: 10;
-}
-
-/* Play audio button */
+/* Audio knop - rechtsboven */
 .play-audio-btn {
   position: fixed;
   top: 20px;
   right: 20px;
+  z-index: 1000;
   padding: 10px 16px;
   font-size: 16px;
   background-color: #008CBA;
@@ -166,72 +161,61 @@ body {
   border: none;
   border-radius: 6px;
   cursor: pointer;
-  transition: background-color 0.2s ease;
-  z-index: 1000;
+  transition: background-color 0.2s ease, transform 0.2s;
 }
 
-.play-audio-btn:hover { background-color: #0072A3; }
-.play-audio-btn:active { background-color: #005f85; }
+.play-audio-btn:hover {
+  background-color: #0072A3;
+  transform: scale(1.05);
+}
 
-/* Onderste tekstvak */
+.play-audio-btn:active {
+  background-color: #005f85;
+  transform: scale(0.98);
+}
+
+/* Onderste tekstvak - scrollbaar */
 #bottomText {
   position: fixed;
-  bottom: 0;
+  bottom: 2vh;
   left: 50%;
   transform: translateX(-50%);
   width: 90%;
-  max-height: 200px;
-  overflow-y: auto;
-  padding: 12px 20px;
-  font-size: 1.1em;
+  max-width: 500px;
+  height: 25vh;
+  font-size: 1.5vw;
+  padding: 1vh 1vw;
   color: black;
   background-color: rgba(255, 255, 255, 0.65);
-  border-radius: 15px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-  display: none;
+  border-radius: 1rem;
+  box-shadow: 0 0.5vh 2vh rgba(0,0,0,0.2);
+  display: block;
   z-index: 20;
+  overflow-y: auto;
+  overflow-x: hidden;
+  line-height: 1.4em;
+  box-sizing: border-box;
 }
 
-#bottomText::-webkit-scrollbar { width: 8px; }
-#bottomText::-webkit-scrollbar-thumb {
-  background-color: #888;
-  border-radius: 10px;
-}
+/* Scrollbar styling */
+#bottomText::-webkit-scrollbar { width: 4px; }
+#bottomText::-webkit-scrollbar-thumb { background-color: #888; border-radius: 1rem; }
 #bottomText::-webkit-scrollbar-thumb:hover { background-color: #555; }
 
-/* Label container */
-.label-container {
-  display: flex;
-  gap: 20px;
-  justify-content: center;
-  margin-top: 50px;
-  font-family: Arial, sans-serif;
+/* Media queries voor tablets */
+@media (max-width: 768px) {
+  #startscreen #startTitle { font-size: 6vw; }
+  .langBtn { font-size: 3.5vw; height: 7vh; }
+  .langBtn img { width: 6vw; }
+  #bottomText { font-size: 3vw; padding: 1vh 2vw; height: 25vh; }
+  .play-audio-btn { padding: 8px 14px; font-size: 14px; }
 }
 
-.label-container label {
-  background-color: #f0f0f0;
-  color: #333;
-  padding: 10px 20px;
-  border-radius: 8px;
-  border: 1px solid #ccc;
-  font-size: 20px;
-  font-weight: bold;
-  min-width: 80px;
-  box-shadow: 2px 2px 5px rgba(0,0,0,0.1);
-  transition: transform 0.2s;
-}
-
-.label-container label:hover {
-  transform: scale(1.1);
-  background-color: #e0e0e0;
-  cursor: pointer;
-}
-
-/* Algemene logo fallback */
-.logo {
-  position: absolute;
-  top: 580px;
-  right: 20px;
-  width: 100px;
-  z-index: 11;
+/* Media queries voor telefoons */
+@media (max-width: 480px) {
+  #startscreen #startTitle { font-size: 7vw; }
+  .langBtn { font-size: 4vw; height: 8vh; }
+  .langBtn img { width: 8vw; }
+  #bottomText { font-size: 4vw; padding: 2vw; height: 25vh; }
+  .play-audio-btn { padding: 6px 12px; font-size: 12px; }
 }

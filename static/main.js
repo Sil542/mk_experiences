@@ -13,10 +13,12 @@ function init() {
   loadStories().then(data => {
     greetings = data;
     setupMarkers();
+    updateSettingsButton();
   });
 
   initSettingsButton();
 }
+
 
 //Created buttons for language selection
 function getLangFromURL() {
@@ -30,6 +32,14 @@ function initSettingsButton() {
     const startScreen = document.getElementById("startscreen");
     if (startScreen) startScreen.style.display = "flex";
   });
+}
+
+function updateSettingsButton() {
+  const settingsBtn = document.getElementById("openSettingsBtn");
+  if (!settingsBtn) return;
+
+  settingsBtn.textContent =
+    greetings.settings?.[selectedLang] || "Instellingen";
 }
 
 
